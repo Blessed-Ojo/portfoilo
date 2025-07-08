@@ -1,0 +1,103 @@
+{
+  "education": [
+    {
+      "id": "mckinsey-forward-program",
+      "institution": "McKinsey & Company",
+      "degree": "Program Completion",
+      "field": "Leadership Development",
+      "location": "Online",
+      "startDate": "2024-07-01",
+      "endDate": "2024-07-31",
+      "gpa": null,
+      "institutionUrl": "https://www.mckinsey.com/forward"
+    },
+    {
+      "id": "coursera-advanced-seo-tactics",
+      "institution": "Coursera",
+      "degree": "Certificate",
+      "field": "Advanced Content and Social Tactics to Optimize SEO",
+      "location": "Online",
+      "startDate": "2024-01-01",
+      "endDate": "2024-01-31",
+      "gpa": null,
+      "institutionUrl": "https://coursera.org/verify/QGGVKP45U9MW"
+    },
+    {
+      "id": "freecodecamp-js-algorithms",
+      "institution": "freeCodeCamp",
+      "degree": "Certification",
+      "field": "JavaScript Algorithms and Data Structures",
+      "location": "Online",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-31",
+      "gpa": null,
+      "honors": [],
+      "relevantCourses": [
+        "ES6",
+        "Regular Expressions",
+        "Debugging",
+        "Basic Data Structures",
+        "Algorithm Scripting"
+      ],
+      "projects": [
+        "Completed all required projects for the JavaScript Algorithms and Data Structures certification."
+      ],
+      "institutionUrl": "https://freecodecamp.org/certification/fccb3aeb8e2-e79c-4716-a0eb-ab81a2aeccc1/javascript-algorithms-and-data-structures"
+    },
+    {
+      "id": "coursera-optimize-google-search",
+      "institution": "Coursera",
+      "degree": "Certificate",
+      "field": "Optimizing a Website for Google Search",
+      "location": "Online",
+      "startDate": "2023-09-01",
+      "endDate": "2023-09-30",
+      "gpa": null,
+      "institutionUrl": "https://coursera.org/verify/3H7ZVVUWS6Q6"
+    },
+    {
+      "id": "coursera-intro-google-seo",
+      "institution": "Coursera",
+      "degree": "Certificate",
+      "field": "Introduction to Google SEO",
+      "location": "Online",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-31",
+      "gpa": null,
+      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WHCFRV6J3MW9"
+    },
+    {
+      "id": "coursera-google-seo-fundamentals",
+      "institution": "Coursera",
+      "degree": "Certificate",
+      "field": "Google SEO Fundamentals",
+      "location": "Online",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-31",
+      "gpa": null,
+      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WXVUPBHNSW6Y"
+    },
+    {
+      "id": "nabteb-computer-science",
+      "institution": "NABTEB",
+      "degree": "Diploma",
+      "field": "Computer Science",
+      "location": "Benin City, Edo state",
+      "startDate": "2021-04-01",
+      "endDate": "2022-04-30",
+      "gpa": null,
+      "institutionUrl": "https://nabteb.gov.ng"
+    },
+    {
+      "id": "edobits-ict-academy",
+      "institution": "Edobits ICT Academy",
+      "degree": "Diploma",
+      "field": "Web Development",
+      "location": "Benin City, Edo state",
+      "startDate": "2020-09-01",
+      "endDate": "2021-09-30",
+      "gpa": null,
+      "institutionUrl": "https://edobits.com"
+    }
+  ]
+}

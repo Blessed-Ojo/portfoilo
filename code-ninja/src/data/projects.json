@@ -1,0 +1,87 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "type": "case-study",
+      "title": "Full-Stack Web & SEO Architect at Welup Digital",
+      "description": "Built and fine-tuned Welup Digital’s core platforms for top-notch SEO, speed, and UX. Also crafted and optimized client sites, boosting traffic and online impact with smart, modern web strategies.",
+      "thumbnail": "/welup-digital.webp",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Redis",
+        "SEO Analytics Tools",
+        "Content Management Systems"
+      ],
+      "links": {
+        "live": "https://welupdigital.com",
+        "caseStudy": "/case-studies/welup-digital"
+      },
+      "metrics": {
+        "Website Traffic": "+300% increase after relaunch",
+        "User Engagement": "+40% improvement in session duration",
+        "Site Speed": "50% faster load times",
+        "Client Sites": "10+ client websites built and optimized"
+      }
+    },
+    {
+      "id": "2",
+      "type": "case-study",
+      "title": "SEO & Growth Specialist at PromptEarn",
+      "description": "Drove a 250% boost in organic traffic for PromptEarn with advanced SEO, Core Web Vitals optimization, and affiliate growth—achieving top 5 keyword rankings and a 45% sales increase.",
+      "thumbnail": "/promptearn.webp",
+      "techStack": [
+        "Ahrefs",
+        "Google Search Console",
+        "Google Analytics",
+        "Screaming Frog",
+        "PageSpeed Insights",
+        "Mailchimp"
+      ],
+      "links": {
+        "live": "https://promptearn.com/",
+        "caseStudy": "/case-studies/prompt-earn"
+      },
+      "metrics": {
+        "Organic Traffic": "250% increase in 6 months",
+        "PageSpeed": "+35 points improvement",
+        "Bounce Rate": "50% reduction",
+        "Keyword Ranking": "Top 5 for key terms"
+      }
+    },
+    {
+      "id": "3",
+      "type": "standard",
+      "title": "Portfolio Website",
+      "description": "A minimalist portfolio website showcasing projects and skills with a clean, responsive design and smooth animations.",
+      "thumbnail": "/my-website.webp",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "links": {
+        "live": "https://www.andersonjoseph.com/",
+        "github": "https://github.com/AndersonDesign1/My-Portfolio"
+      }
+    },
+    {
+      "id": "4",
+      "type": "standard",
+      "title": "WordPress Developer at The Wealthy Post",
+      "description": "Revamped The Wealthy Post’s website with advanced WordPress techniques, boosting engagement and organic traffic through responsive design, SEO, and performance optimization.",
+      "thumbnail": "/the-wealthy-post.webp",
+      "techStack": [
+        "WordPress",
+        "Yoast SEO",
+        "Google Analytics",
+        "PageSpeed Insights"
+      ],
+      "links": {
+        "live": "https://thewealthypost.com/"
+      },
+      "metrics": {
+        "Organic Traffic": "200% increase post-launch",
+        "Load Time": "Reduced from 15s to 3s"
+      }
+    }
+  ]
+}

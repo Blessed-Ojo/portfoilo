@@ -1,0 +1,186 @@
+{
+  "workExperience": [
+    {
+      "id": "welup-digital-fullstack-developer",
+      "company": "Welup Digital",
+      "position": "Full Stack Developer",
+      "location": "Benin City, Nigeria",
+      "startDate": "2021-09-01",
+      "endDate": null,
+      "current": true,
+      "description": "Implemented responsive design principles across all platforms and developed/optimized dynamic client websites using effective SEO strategies.",
+      "achievements": [
+        "Implemented responsive design principles across all platforms, achieving a mobile usability score of over 90%, which significantly boosted mobile visitor retention rates by more than 25%.",
+        "Spearheaded ongoing maintenance and support for all client websites, resulting in a reduction of downtime incidents by 75% and an improvement in site speed metrics by up to 50%.",
+        "Developed and optimized 10 dynamic client websites over a 3-year period, enhancing user engagement by 40% and increasing overall site traffic by 30% through effective SEO strategies."
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Bootstrap",
+        "WordPress",
+        "Next.js",
+        "Framer Motion"
+      ],
+      "companyUrl": "https://welupdigital.com"
+    },
+    {
+      "id": "welup-digital-seo-specialist",
+      "company": "Welup Digital",
+      "position": "SEO Specialist",
+      "location": "Benin City, Nigeria",
+      "startDate": "2023-01-01",
+      "endDate": null,
+      "current": true,
+      "description": "Developed and executed comprehensive SEO strategies to significantly boost website traffic, visibility, and user engagement.",
+      "achievements": [
+        "Developed and executed comprehensive SEO strategies that boosted website traffic by 300%, resulting in a 15-fold increase in visibility across search engines, and enhancing user engagement metrics by 40%.",
+        "Conducted extensive keyword research and competitive analysis, identifying over 200 high-value keywords that contributed to a 50% growth in organic search rankings within six months, leading to an increased click-through rate (CTR) of 25%.",
+        "Created and published multiple blogs that ranked in the top 5 on Google search results, driving a 40% increase in organic traffic and generating over 20,000 monthly visitors within three months.",
+        "Adapted strategies to stay aligned with industry trends and algorithm updates."
+      ],
+      "technologies": [
+        "SEO (On-page, Off-page, Technical, Local SEO)",
+        "Keyword Research",
+        "Google Analytics",
+        "SEMrush",
+        "Search Console"
+      ],
+      "companyUrl": "https://welupdigital.com"
+    },
+    {
+      "id": "kyrus-recycling-lead-developer",
+      "company": "Kyrus Recycling",
+      "position": "Lead Developer",
+      "location": "Benin City, Edo state",
+      "startDate": "2024-09-01",
+      "endDate": "2024-12-31",
+      "current": false,
+      "description": "Led a team of full-stack developers in designing and building a recycling web application that incentivizes users to recycle waste.",
+      "achievements": [
+        "Led a team of full-stack developers in designing and building a recycling web application that incentivizes users to recycle waste by offering monetary rewards.",
+        "Oversaw project planning, development, and deployment, ensuring seamless collaboration and adherence to timelines.",
+        "Delivered a fully functional application within three months, resulting in over 500 user sign-ups in the first month and contributing to increased environmental awareness and waste recycling efforts."
+      ],
+      "technologies": [
+        "Full-stack Development",
+        "Web Application Development",
+        "Project Management"
+      ],
+      "companyUrl": "https://kyrusrecycling.com"
+    },
+    {
+      "id": "promptearn-seo-specialist",
+      "company": "PromptEarn",
+      "position": "SEO Specialist",
+      "location": "Nigeria",
+      "startDate": "2024-05-01",
+      "endDate": "2024-10-31",
+      "current": false,
+      "description": "Spearheaded a comprehensive marketing campaign using email, social media, and affiliate marketing strategies, and optimized website performance for SEO.",
+      "achievements": [
+        "Spearheaded a comprehensive marketing campaign utilising email, social media, and affiliate marketing strategies, resulting in a 40% increase in affiliates over 8 weeks.",
+        "Expanded affiliate network from 40,000 to over 93,000 partners, resulting in a 132% increase in referral traffic and contributing to a 45% uplift in overall sales revenue within 6 months.",
+        "Optimised Google Core Web Vitals and PageSpeed scores across the website, achieving an average improvement of 35 points, which led to a 50% reduction in bounce rates and enhanced user engagement metrics by over 60%.",
+        "Implemented advanced SEO strategies that increased organic search visibility from position #9 to the top #5 for key target keywords, leading to a surge of nearly 250% in monthly organic traffic within six months."
+      ],
+      "technologies": [
+        "Email Marketing",
+        "Social Media Marketing",
+        "Affiliate Marketing",
+        "SEO (On-page, Technical)",
+        "Google Core Web Vitals",
+        "PageSpeed"
+      ],
+      "companyUrl": "https://promptearn.com"
+    },
+    {
+      "id": "edojobs-web-development-trainer",
+      "company": "EdoJobs",
+      "position": "Web Development Trainer",
+      "location": "Benin City, Nigeria",
+      "startDate": "2022-01-01",
+      "endDate": "2024-08-31",
+      "current": false,
+      "description": "Delivered in-depth training on web development, guiding students in building functional and responsive websites.",
+      "achievements": [
+        "Delivered in-depth training on HTML, CSS, and React to over 50 students, focusing on hands-on learning and real-world application.",
+        "Guided students in building functional and responsive websites by applying industry best practices and modern development techniques.",
+        "Achieved a 90% success rate, with students creating fully operational websites and advancing their web development careers within three months."
+      ],
+      "technologies": ["HTML", "CSS", "React", "Web Development Training"],
+      "companyUrl": "https://edojobs.com"
+    },
+    {
+      "id": "eng4careers-wix-developer",
+      "company": "Eng4Careers",
+      "position": "Wix Developer",
+      "location": "United States of America",
+      "startDate": "2024-05-01",
+      "endDate": "2024-07-31",
+      "current": false,
+      "description": "Revamped the corporate website using Wix, implementing a streamlined UI/UX design to enhance user navigation.",
+      "achievements": [
+        "Revamped the corporate website by utilizing Wix, implementing a streamlined UI/UX design that enhanced user navigation, resulting in a 40% increase in average session duration and a 30% reduction in bounce rates.",
+        "Optimized page load times through adherence to Wix best practices, decreasing load speed from 7 seconds to an impressive 2.4 seconds, contributing to a 25% rise in overall site traffic within three months post-launch.",
+        "Conducted comprehensive user testing and feedback sessions, leading to the identification of key navigational pain points; effectively addressed these issues, increasing customer satisfaction ratings by over 50%."
+      ],
+      "technologies": ["Wix", "UI/UX Design", "User Testing"],
+      "companyUrl": "https://eng4careers.com"
+    },
+    {
+      "id": "the-wealthy-post-wordpress-developer",
+      "company": "The Wealthy Post",
+      "position": "WordPress Developer",
+      "location": "United Kingdom",
+      "startDate": "2023-12-01",
+      "endDate": "2024-03-31",
+      "current": false,
+      "description": "Revamped the company website using advanced WordPress techniques, implementing responsive design, and optimizing performance.",
+      "achievements": [
+        "Revamped the company website utilizing advanced WordPress techniques, enhancing user engagement by 40% and increasing average session duration to 5 minutes by implementing a responsive design and intuitive navigation.",
+        "Applied SEO strategies that elevated blog visibility on search engines, resulting in a 200% increase in organic traffic within three months and boosting page views from 10K to over 18K monthly.",
+        "Optimized website performance through best practices in WordPress development, reducing loading time from 15 seconds to just 3 seconds, which improved overall user satisfaction scores by an impressive 60%."
+      ],
+      "technologies": ["WordPress", "SEO", "Responsive Design"],
+      "companyUrl": "https://wealthypost.com"
+    },
+    {
+      "id": "book-tutors-seo-specialist",
+      "company": "Book Tutors",
+      "position": "SEO Specialist",
+      "location": "Lagos, Nigeria",
+      "startDate": "2023-02-01",
+      "endDate": "2023-11-30",
+      "current": false,
+      "description": "Conducted comprehensive keyword research and strategically optimized content to improve search engine rankings and organic traffic.",
+      "achievements": [
+        "Conducted comprehensive keyword research to identify high-value opportunities tailored to the company's course offerings, uncovering over 150 targeted keywords.",
+        "Strategically optimized content across website pages by integrating relevant keywords, improving on-page SEO, and aligning with user search intent for each course topic.",
+        "Achieved top 3 Google rankings for multiple pages covering the company's various courses, resulting in a 70% increase in organic traffic and a 35% rise in course sign-ups within six months."
+      ],
+      "technologies": ["SEO", "Keyword Research", "On-page SEO"],
+      "companyUrl": "https://booktutors.com"
+    },
+    {
+      "id": "iomun-skills-trainer",
+      "company": "IOMUN",
+      "position": "Skills Trainer",
+      "location": "Benin City, Nigeria",
+      "startDate": "2022-01-01",
+      "endDate": "2022-12-31",
+      "current": false,
+      "description": "Conducted ICT and graphic design training for underserved populations, empowering individuals with essential digital skills.",
+      "achievements": [
+        "Conducted ICT and graphic design training for underserved populations in rural areas, focusing on practical skills and digital empowerment.",
+        "Empowered over 100 individuals with essential digital skills, leading to improved career opportunities and community development initiatives.",
+        "Developed tailored training materials to address the specific needs of participants, ensuring accessibility and effective learning."
+      ],
+      "technologies": ["ICT", "Graphic Design", "Training & Development"],
+      "companyUrl": "https://iomun.org"
+    }
+  ]
+}
