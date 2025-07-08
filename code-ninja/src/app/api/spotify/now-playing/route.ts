@@ -100,13 +100,11 @@ export async function GET(req: NextRequest) {
       }
 
       return NextResponse.json({
-        spotify: {
-          name: track.name,
-          artists: track.artists,
-          album: track.album,
-          external_urls: track.external_urls,
-          isPlaying: false,
-        },
+        name: track.name,
+        artists: track.artists,
+        album: track.album,
+        external_urls: track.external_urls,
+        isPlaying: false,
       });
     }
 
@@ -132,13 +130,11 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json({
-      spotify: {
-        name: data.item.name,
-        artists: data.item.artists,
-        album: data.item.album,
-        external_urls: data.item.external_urls,
-        isPlaying: data.is_playing,
-      },
+      name: data.item.name,
+      artists: data.item.artists,
+      album: data.item.album,
+      external_urls: data.item.external_urls,
+      isPlaying: data.is_playing,
     });
   } catch (error) {
     console.error("Spotify API error:", error);
