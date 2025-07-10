@@ -14,6 +14,7 @@ export default function SpotifyNowPlaying() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading , setIsLoading]= useState(true);
 
   useEffect(() => {
     async function fetchTrack() {
@@ -24,6 +25,7 @@ export default function SpotifyNowPlaying() {
           setTrack(null);
           setError(null);
           setIsVisible(false);
+          setIsLoading(false);
           return;
         }
         
@@ -34,22 +36,26 @@ export default function SpotifyNowPlaying() {
             setError(data.error);
             setTrack(null);
             setIsVisible(false);
+            setIsLoading(false);
           } else {
             setTrack(data);
             setError(null);
             setIsVisible(true);
+            setIsLoading(false);
           }
         } else {
           const errorData = await res.json().catch(() => ({ error: 'Unknown error' }));
           setError(errorData.error || 'Failed to fetch Spotify data');
           setTrack(null);
           setIsVisible(false);
+          setIsLoading(false);
         }
       } catch (err) {
         console.error('Spotify fetch error:', err);
         setError('Network error');
         setTrack(null);
         setIsVisible(false);
+        setIsLoading(false);
       }
     }
     
@@ -57,7 +63,66 @@ export default function SpotifyNowPlaying() {
     const interval = setInterval(fetchTrack, 30000);
     return () => clearInterval(interval);
   }, []);
-
+if (isLoading) {
+  return (
+    <div className="fixed bottom-6 right-6 z-50 transition-all duration-500 ease-out">
+      {/* Ninja Stealth Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-purple-900/10 to-indigo-900/20 rounded-2xl blur-xl transform scale-110 animate-pulse" />
+      
+      <div className={`
+        relative flex items-center gap-3
+        bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95
+        border border-slate-700/50 backdrop-blur-md
+        text-slate-100 px-4 py-3 rounded-2xl 
+        shadow-2xl shadow-black/50
+        text-sm max-w-[280px]
+      `}>
+        {/* Spinning Shuriken Loader */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-green-400/20 rounded-lg blur-md animate-pulse" />
+          <div className="relative w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-600/50">
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
+              className="text-green-400 animate-spin"
+            >
+              <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="flex flex-col items-start min-w-0 flex-1">
+          <div className="flex items-center gap-2 w-full">
+            <span className="font-mono text-xs text-green-400 font-bold tracking-wider animate-pulse">
+              🔍 SCANNING
+            </span>
+            <div className="flex-1 h-px bg-gradient-to-r from-green-400/50 to-transparent" />
+          </div>
+          <span className="font-semibold text-sm text-slate-100 mt-1">
+            Infiltrating Spotify...
+          </span>
+          <div className="flex items-center gap-1 text-xs text-slate-400 font-mono mt-1">
+            <span>Decrypting tracks</span>
+            <span className="animate-pulse">
+              <span className="animate-ping">.</span>
+              <span className="animate-ping delay-75">.</span>
+              <span className="animate-ping delay-150">.</span>
+            </span>
+          </div>
+        </div>
+        
+        {/* Pulsing Data Stream Effect */}
+        <div className="flex flex-col gap-1">
+          <div className="w-2 h-1 bg-green-400/60 rounded animate-pulse"></div>
+          <div className="w-2 h-1 bg-green-400/40 rounded animate-pulse delay-100"></div>
+          <div className="w-2 h-1 bg-green-400/20 rounded animate-pulse delay-200"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
   if (error || !track) {
     return null;
   }
@@ -133,7 +198,7 @@ export default function SpotifyNowPlaying() {
         </div>
         
         {/* Ninja Shuriken Icon */}
-        <div className="text-slate-500 group-hover:text-green-400 transition-colors duration-300 group-hover:rotate-45 transform transition-transform duration-300">
+        <div className="text-slate-500 group-hover:text-green-400  group-hover:rotate-45 transition-all duration-300">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
           </svg>
