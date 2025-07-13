@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import WelcomeScreen from "@/components/welcome/WelcomeScreen";
+
 import MainContent from "@/components/main-content";
 import MainLayout from "./(main)/layout";
+
 
 
 export default function Page() {
