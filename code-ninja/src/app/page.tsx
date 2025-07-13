@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import WelcomeScreen from "@/components/welcome/WelcomeScreen";
-import Homepage from "@/app/(main)/hompage/page";
+import Homepage from "@/app/(main)/page";
 
 
 export default function Page() {
