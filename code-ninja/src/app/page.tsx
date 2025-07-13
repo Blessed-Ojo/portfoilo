@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import WelcomeScreen from "@/components/welcome/WelcomeScreen";
-import Homepage from "@/components/Homepage";
+import Homepage from "@/app/(main)/hompage/page";
+
 
 export default function Page() {
   const [showWelcome, setShowWelcome] = useState(true);

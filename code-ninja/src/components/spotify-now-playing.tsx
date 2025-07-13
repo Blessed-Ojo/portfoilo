@@ -60,7 +60,7 @@ export default function SpotifyNowPlaying() {
     }
     
     fetchTrack();
-    const interval = setInterval(fetchTrack, 30000);
+    const interval = setInterval(fetchTrack, 20000);
     return () => clearInterval(interval);
   }, []);
 if (isLoading) {

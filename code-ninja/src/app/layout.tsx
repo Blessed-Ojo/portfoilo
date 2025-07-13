@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import type { ReactNode, ReactElement } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -57,9 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          {children}
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

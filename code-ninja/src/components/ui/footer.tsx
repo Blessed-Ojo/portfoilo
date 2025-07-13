@@ -10,6 +10,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import SpotifyNowPlaying from "@/components/spotify-now-playing";
+
 
 const socialLinks = [
   {
@@ -37,7 +39,7 @@ const socialLinks = [
 const Footer: React.FC = () => {
   const [showButton, setShowButton] = useState(false);
   const currentYear = useMemo(() => new Date().getFullYear(), []);
-
+ 
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -81,6 +83,7 @@ const Footer: React.FC = () => {
             </a>
           ))}
         </div>
+        
       </div>
 
       {/* Scroll to Top */}
@@ -92,8 +95,12 @@ const Footer: React.FC = () => {
           title="Return to Top"
         >
           <ChevronUpIcon className="w-6 h-6" />
+          
         </motion.button>
       )}
+           
+        <SpotifyNowPlaying />
+
     </footer>
   );
 };

@@ -1,8 +1,8 @@
-import Hero from "./hero";
+import Hero from "@/components/hero";
 import ProjectGrid from "@/components/project-grid"
-import WorkHistory from "./work-history";
-import SkillsSection from "./skills-section";
-import SpotifyNowPlaying from "@/components/spotify-now-playing";
+import WorkHistory from "@/components/work-history";
+import SkillsSection from "@/components/skills-section";
+
 
 export default function Homepage() {
   return(
@@ -12,7 +12,7 @@ export default function Homepage() {
        <WorkHistory/>
        <SkillsSection/>
        {/* Now playing component */}
-        <SpotifyNowPlaying />
+      
     </main>
   )
 }
