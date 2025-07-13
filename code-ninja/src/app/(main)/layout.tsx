@@ -9,7 +9,6 @@ export default function MainLayout({
 }) {
   return (
     <>
-     <div>Layout is working!</div>
       <Navbar />
       <main>{children}</main>
       <Footer />
