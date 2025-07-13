@@ -365,13 +365,24 @@ const FunFactCard = ({
 // Call to Action Component
 const CallToAction = () => (
   <motion.div variants={float3D} className="flex justify-center gap-6 flex-wrap">
+
+    <Link href="/contact" passHref>
+      <motion.a
+]
     <Link href="/contact">
       <motion.div
+
         whileHover={{ scale: 1.05, y: -5 }}
         whileTap={{ scale: 0.95 }}
         className="px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-2xl hover:shadow-blue-500/40 text-lg"
       >
         Get In Touch
+
+      </motion.a>
+    </Link>
+    <Link href="/projects" passHref>
+      <motion.a
+
       </motion.div>
     </Link>
     <Link href="/projects">
@@ -381,6 +392,9 @@ const CallToAction = () => (
         className="px-10 py-4 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-300 font-bold rounded-2xl hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:bg-white/60 dark:hover:bg-gray-800/60 backdrop-blur-sm shadow-xl text-lg"
       >
         View Projects
+
+      </motion.a>
+
       </motion.div>
     </Link>
   </motion.div>
