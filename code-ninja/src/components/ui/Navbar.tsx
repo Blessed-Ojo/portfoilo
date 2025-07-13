@@ -16,7 +16,7 @@ const menuItems: MenuItem[] = [
   { label: "About", link: "/about" },
   { label: "Portfolio", link: "/projects" },
   { label: "Blog", link: "/blog" },
-  { label: "Contact", link: "/contact" },
+ {label: "Contact", link: "/contact" },
 ];
 
 const Navbar: React.FC = () => {
