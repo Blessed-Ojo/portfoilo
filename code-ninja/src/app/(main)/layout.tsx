@@ -1,7 +1,6 @@
 // app/(main)/layout.tsx
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/footer";
-import Homepage from "./page";
 
 export default function MainLayout({
   children,
@@ -11,7 +10,7 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
-      <main><Homepage /></main>
+      <main>{children}</main>
       <Footer />
     </>
   );

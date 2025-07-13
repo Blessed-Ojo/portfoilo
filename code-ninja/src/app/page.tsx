@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import WelcomeScreen from "@/components/welcome/WelcomeScreen";
-import Homepage from "@/app/(main)/page";
+import MainContent from "@/components/main-content";
+import MainLayout from "./(main)/layout";
 
 
 export default function Page() {
@@ -22,7 +23,9 @@ export default function Page() {
             onComplete={handleWelcomeComplete} 
           />
         ) : (
-          <Homepage key="homepage" />
+          <MainLayout>
+            <MainContent />
+          </MainLayout>
         )}
       </AnimatePresence>
     </main>
