@@ -1,0 +1,189 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "type": "case-study",
+      "title": "Full-Stack Web & SEO Architect at Welup Digital",
+      "description": "Built and fine-tuned Welup Digital’s core platforms for top-notch SEO, speed, and UX. Also crafted and optimized client sites, boosting traffic and online impact with smart, modern web strategies.",
+      "thumbnail": "/welup-digital.webp",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Redis",
+        "SEO Analytics Tools",
+        "Content Management Systems"
+      ],
+      "links": {
+        "live": "https://welupdigital.com",
+        "caseStudy": "/case-studies/welup-digital"
+      },
+      "metrics": {
+        "Website Traffic": "+300% increase after relaunch",
+        "User Engagement": "+40% improvement in session duration",
+        "Site Speed": "50% faster load times",
+        "Client Sites": "10+ client websites built and optimized"
+      }
+    },
+    {
+      "id": "2",
+      "type": "case-study",
+      "title": "SEO & Growth Specialist at PromptEarn",
+      "description": "Drove a 250% boost in organic traffic for PromptEarn with advanced SEO, Core Web Vitals optimization, and affiliate growth—achieving top 5 keyword rankings and a 45% sales increase.",
+      "thumbnail": "/promptearn.webp",
+      "techStack": [
+        "Ahrefs",
+        "Google Search Console",
+        "Google Analytics",
+        "Screaming Frog",
+        "PageSpeed Insights",
+        "Mailchimp"
+      ],
+      "links": {
+        "live": "https://promptearn.com/",
+        "caseStudy": "/case-studies/prompt-earn"
+      },
+      "metrics": {
+        "Organic Traffic": "250% increase in 6 months",
+        "PageSpeed": "+35 points improvement",
+        "Bounce Rate": "50% reduction",
+        "Keyword Ranking": "Top 5 for key terms"
+      }
+    },
+    {
+      "id": "3",
+      "type": "standard",
+      "title": "Portfolio Website",
+      "description": "A minimalist portfolio website showcasing projects and skills with a clean, responsive design and smooth animations.",
+      "thumbnail": "/my-website.webp",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "links": {
+        "live": "https://www.andersonjoseph.com/",
+        "github": "https://github.com/AndersonDesign1/My-Portfolio"
+      }
+    },
+    {
+      "id": "4",
+      "type": "standard",
+      "title": "WordPress Developer at The Wealthy Post",
+      "description": "Revamped The Wealthy Post’s website with advanced WordPress techniques, boosting engagement and organic traffic through responsive design, SEO, and performance optimization.",
+      "thumbnail": "/the-wealthy-post.webp",
+      "techStack": [
+        "WordPress",
+        "Yoast SEO",
+        "Google Analytics",
+        "PageSpeed Insights"
+      ],
+      "links": {
+        "live": "https://thewealthypost.com/"
+      },
+      "metrics": {
+        "Organic Traffic": "200% increase post-launch",
+        "Load Time": "Reduced from 15s to 3s"
+      }
+    },
+    {
+      "id": "5",
+      "type": "standard",
+      "title": "Corporate Website for Dubiss Forex Academy",
+      "description": "Built a modern, trust-focused website for Dubiss Forex Academy, highlighting their global reach, educational programs, and client testimonials. Enhanced credibility and user engagement with a clean, professional design.",
+      "thumbnail": "/dubiss.webp",
+      "techStack": ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+      "links": {
+        "live": "https://dubissfa.com/"
+      },
+      "metrics": {
+        "Session Duration": "40% increase",
+        "Bounce Rate": "30% reduction",
+        "Trust Signals": "Added testimonials and global stats"
+      }
+    },
+    {
+      "id": "6",
+      "type": "standard",
+      "title": "Corporate Website for Craigwal Petreshore",
+      "description": "Developed a robust corporate site for Craigwal Petreshore, showcasing engineering, procurement, and construction capabilities. Integrated downloadable company profile and clear service breakdowns.",
+      "thumbnail": "/craigwal.webp",
+      "techStack": ["WordPress", "Custom Theme", "SEO Optimization"],
+      "links": {
+        "live": "https://www.craigwalpetroshore.com/"
+      },
+      "metrics": {
+        "Profile Downloads": "Company profile download enabled",
+        "Navigation": "Improved service discovery",
+        "Mobile UX": "Fully responsive redesign"
+      }
+    },
+    {
+      "id": "7",
+      "type": "standard",
+      "title": "Corporate Website for New Hampshire Capital",
+      "description": "Designed and built a modern site for New Hampshire Capital, highlighting their expertise in asset management, infrastructure, and energy projects. Focused on clarity, trust, and sector impact.",
+      "thumbnail": "/new-hampshire.webp",
+      "techStack": ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+      "links": {
+        "live": "https://www.newhampshire.ng/"
+      },
+      "metrics": {
+        "User Engagement": "Increased time on site",
+        "Clarity": "Streamlined sector navigation",
+        "Newsletter": "Newsletter signup integrated"
+      }
+    },
+    {
+      "id": "8",
+      "type": "standard",
+      "title": "Corporate Website for Urabus Renewable Energies",
+      "description": "Developed a clean, mission-driven website for Urabus Renewable Energies, focusing on their impact in healthcare, mobility, and sustainability. Showcased projects, testimonials, and SDG alignment.",
+      "thumbnail": "/urabus-energies.webp",
+      "techStack": ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+      "links": {
+        "live": "https://www.urabusenergies.com/"
+      },
+      "metrics": {
+        "Project Showcases": "Portfolio section added",
+        "Testimonials": "Video and text testimonials integrated",
+        "Mobile UX": "Optimized for all devices"
+      }
+    },
+    {
+      "id": "9",
+      "type": "standard",
+      "title": "Corporate Website for Aristeia Properties",
+      "description": "Built a visually engaging site for Aristeia Properties, emphasizing their mission, vision, and core values. Enhanced investor trust and showcased real estate expertise.",
+      "thumbnail": "/aristeia.webp",
+      "techStack": ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+      "links": {
+        "live": "https://www.aristeiaproperties.com/"
+      },
+      "metrics": {
+        "Investor Inquiries": "Contact form conversions up",
+        "Core Values": "Clear value proposition sections",
+        "Performance": "Fast load times"
+      }
+    },
+    {
+      "id": "10",
+      "type": "standard",
+      "title": "Lead Developer at Kyrus Recycling",
+      "description": "Led a team to build a recycling web app that incentivizes users to recycle waste for rewards. Delivered the MVP in 3 months, driving 500+ user sign-ups in the first month.",
+      "thumbnail": "/trashpoint.webp",
+      "techStack": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Team Leadership"
+      ],
+      "links": {
+        "live": "https://trashpoint.africa/"
+      },
+      "metrics": {
+        "User Sign-ups": "500+ in first month",
+        "Delivery": "MVP in 3 months",
+        "Mobile UX": "Fully responsive app"
+      }
+    }
+  ]
+}

@@ -262,11 +262,11 @@ const ProfessionalCard = ({
           gradientFrom={gradientFrom} 
           gradientTo={gradientTo}
         />
-        <h3 className={`text-2xl font-bold text-gray-800 dark:text-white group-hover:text-${hoverColor}-600 dark:group-hover:text-${hoverColor}-400 transition-colors`}>
+        <h3 className={`text-2xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors`}>
           {title}
         </h3>
       </div>
-      <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-${hoverColor}-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80`}>
+      <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80`}>
         <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
           {description}
         </p>
@@ -275,8 +275,8 @@ const ProfessionalCard = ({
             const colors = ['blue', 'purple', 'pink', 'green'];
             const color = colors[index % colors.length];
             return (
-              <li key={index} className={`flex items-center gap-3 hover:text-${color}-600 dark:hover:text-${color}-400 transition-colors`}>
-                <span className={`w-2 h-2 bg-${color}-500 rounded-full`}></span>
+              <li key={index} className={`flex items-center gap-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors`}>
+                <span className={`w-2 h-2 bg-blue-500 rounded-full`}></span>
                 {stat}
               </li>
             );
@@ -300,12 +300,12 @@ const TechnicalSkillCard = ({
   delay?: number;
 }) => (
   <Card3D delay={delay}>
-    <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-${color}-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80 group`}>
-      <h4 className={`font-bold mb-6 text-${color}-600 dark:text-${color}-400 flex items-center gap-3 text-xl`}>
+    <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80 group`}>
+      <h4 className={`font-bold mb-6 text-blue-600 dark:text-blue-400 flex items-center gap-3 text-xl`}>
         <motion.span 
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className={`w-3 h-3 bg-${color}-500 rounded-full`}
+          className={`w-3 h-3 bg-blue-500 rounded-full`}
         />
         {title}
       </h4>
@@ -316,7 +316,7 @@ const TechnicalSkillCard = ({
             whileHover={{ x: 10, scale: 1.05 }}
             className="flex items-center gap-3 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
           >
-            <span className={`text-${color}-500 text-lg`}>▸</span> 
+            <span className={`text-blue-500 text-lg`}>▸</span> 
             {skill}
           </motion.li>
         ))}
@@ -344,9 +344,9 @@ const FunFactCard = ({
           <motion.div 
             whileHover={{ rotateY: 180, scale: 1.1 }}
             transition={{ duration: 0.6 }}
-            className={`p-4 bg-gradient-to-r from-${color}-500/20 to-${color}-600/20 rounded-2xl border border-${color}-500/30 shadow-lg`}
+            className={`p-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl border border-blue-500/30 shadow-lg`}
           >
-            <Icon className={`w-8 h-8 text-${color}-600 dark:text-${color}-400`} />
+            <Icon className={`w-8 h-8 text-blue-600 dark:text-blue-400`} />
           </motion.div>
           <div className="flex-1">
             <h3 className="font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-3 text-xl">
@@ -365,24 +365,20 @@ const FunFactCard = ({
 // Call to Action Component
 const CallToAction = () => (
   <motion.div variants={float3D} className="flex justify-center gap-6 flex-wrap">
-    <Link href="/contact">
-      <motion.div
-        whileHover={{ scale: 1.05, y: -5 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-2xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-2xl hover:shadow-blue-500/40 text-lg cursor-pointer"
-      >
-        Get In Touch
-      </motion.div>
+   
+    <Link 
+      href="/projects"
+      className="px-10 py-4 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-300 font-bold rounded-2xl hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:bg-white/60 dark:hover:bg-gray-800/60 backdrop-blur-sm shadow-xl text-lg inline-block hover:scale-105 hover:-translate-y-1"
+    >
+      View Projects
     </Link>
-    <Link href="/projects">
-      <motion.div
-        whileHover={{ scale: 1.05, y: -5 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-10 py-4 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-300 font-bold rounded-2xl hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:bg-white/60 dark:hover:bg-gray-800/60 backdrop-blur-sm shadow-xl text-lg cursor-pointer"
-      >
-        View Projects
-      </motion.div>
+    <Link 
+      href="/contact"
+      className="px-10 py-4 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-300 font-bold rounded-2xl hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:bg-white/60 dark:hover:bg-gray-800/60 backdrop-blur-sm shadow-xl text-lg inline-block hover:scale-105 hover:-translate-y-1"
+    >
+      Get In Touch
     </Link>
+     
   </motion.div>
 );
 
