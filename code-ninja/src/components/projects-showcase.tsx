@@ -64,38 +64,33 @@ const ProjectsShowcase: React.FC = () => {
   // Filter by category, but keep original order
   const filteredProjects = useMemo(() => {
     if (activeCategory === "All") return projects;
-    if (activeCategory === "Full Stack")
+
+    const categoryTech = {
+      "Full Stack": [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Content Management Systems",
+      ],
+      "SEO": [
+        "Ahrefs",
+        "Google Search Console",
+        "Google Analytics",
+        "Screaming Frog",
+        "PageSpeed Insights",
+        "Mailchimp",
+        "Yoast SEO",
+      ],
+      "Web Design": ["WordPress", "Wix", "Webflow"],
+    };
+
+    if (activeCategory in categoryTech) {
+      const techList = categoryTech[activeCategory as keyof typeof categoryTech];
       return projects.filter((project) =>
-        project.techStack.some((tech) =>
-          [
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Redis",
-            "Content Management Systems",
-          ].includes(tech)
-        )
+        project.techStack.some((tech) => techList.includes(tech))
       );
-    if (activeCategory === "SEO")
-      return projects.filter((project) =>
-        project.techStack.some((tech) =>
-          [
-             "Ahrefs",
-            "Google Search Console",
-            "Google Analytics",
-            "Screaming Frog",
-            "PageSpeed Insights",
-            "Mailchimp",
-            "Yoast SEO",
-          ].includes(tech)
-        )
-      );
-    if (activeCategory === "Web Design")
-      return projects.filter((project) =>
-        project.techStack.some((tech) =>
-          ["WordPress", "Wix", "Webflow"].includes(tech)
-)
-      );
+    }
     
     return [];
   }, [activeCategory]);
