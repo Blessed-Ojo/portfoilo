@@ -105,19 +105,19 @@ const ProjectsShowcase: React.FC = () => {
   }, [activeCategory, categorizedProjects]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/5 dark:bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-green-500/5 dark:bg-green-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5 dark:opacity-10">
           <div 
-            className="h-full w-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"
+            className="h-full w-full bg-gradient-to-r from-transparent via-cyan-500/10 dark:via-cyan-500/20 to-transparent"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3e%3cpath d='m 40 0 l 0 40 l -40 0 l 0 -40 z' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.1'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e")`,
+              backgroundImage: `url("data:image/svg+xml,%3csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3e%3cpath d='m 40 0 l 0 40 l -40 0 l 0 -40 z' fill='none' stroke='%23000000' stroke-width='1' opacity='0.05' class='dark:stroke-white dark:opacity-10'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)' /%3e%3c/svg%3e")`,
             }}
           ></div>
         </div>
@@ -131,7 +131,7 @@ const ProjectsShowcase: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-green-400 bg-clip-text text-transparent mb-4 font-mono">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-600 via-purple-600 to-green-600 dark:from-cyan-400 dark:via-purple-400 dark:to-green-400 bg-clip-text text-transparent mb-4 font-mono">
               &gt; Projects_
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mb-8"></div>
@@ -145,8 +145,8 @@ const ProjectsShowcase: React.FC = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`px-3 sm:px-6 py-2 rounded-lg font-mono text-xs sm:text-sm transition-all duration-300 border relative group ${
                   activeCategory === category
-                    ? "bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-cyan-500/50 text-cyan-300 shadow-lg shadow-cyan-500/25"
-                    : "bg-gray-800/50 border-gray-700 text-gray-400 hover:border-cyan-500/50 hover:text-cyan-300"
+                    ? "bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border-cyan-500/30 text-cyan-700 shadow-lg shadow-cyan-500/10 dark:from-cyan-500/20 dark:to-purple-500/20 dark:border-cyan-500/50 dark:text-cyan-300 dark:shadow-cyan-500/25"
+                    : "bg-gray-100/50 border-gray-300 text-gray-600 hover:border-cyan-500/30 hover:text-cyan-700 dark:bg-gray-800/50 dark:border-gray-700 dark:text-gray-400 dark:hover:border-cyan-500/50 dark:hover:text-cyan-300"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -157,7 +157,7 @@ const ProjectsShowcase: React.FC = () => {
                 {activeCategory === category && (
                   <motion.div
                     layoutId="activeCategory"
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg"
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 dark:from-cyan-500/10 dark:to-purple-500/10 rounded-lg"
                     initial={false}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -185,16 +185,15 @@ const ProjectsShowcase: React.FC = () => {
                     key={project.id}
                     className="group relative"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.5,
                       delay: index * 0.1,
                       ease: [0.25, 0.1, 0.25, 1],
                     }}
-                    viewport={{ once: true }}
                   >
                     {/* Project Card */}
-                    <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden transition-all duration-500 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 group-hover:transform group-hover:scale-[1.02]">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 overflow-hidden transition-all duration-500 hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-500/5 group-hover:transform group-hover:scale-[1.02] dark:bg-gray-800/50 dark:border-gray-700 dark:hover:border-cyan-500/50 dark:hover:shadow-cyan-500/10">
                       {/* Project Image */}
                       <div className="relative aspect-[16/10] overflow-hidden">
                         <Image
@@ -205,16 +204,16 @@ const ProjectsShowcase: React.FC = () => {
                           sizes="(max-width: 768px) 100vw, 50vw"
                           priority={index < 2 && activeCategory === "All"}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent dark:from-black/60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 dark:from-cyan-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         {/* Project Type Badge */}
                         <div className="absolute top-4 right-4">
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-mono ${
+                            className={`px-3 py-1 rounded-full text-xs font-mono backdrop-blur-sm ${
                               project.type === "case-study"
-                                ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/50 text-purple-300"
-                                : "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 text-cyan-300"
+                                ? "bg-purple-500/20 border border-purple-500/30 text-purple-700 dark:bg-purple-500/20 dark:border-purple-500/50 dark:text-purple-300"
+                                : "bg-cyan-500/20 border border-cyan-500/30 text-cyan-700 dark:bg-cyan-500/20 dark:border-cyan-500/50 dark:text-cyan-300"
                             }`}
                           >
                             {project.type === "case-study"
@@ -227,7 +226,7 @@ const ProjectsShowcase: React.FC = () => {
                       {/* Project Content */}
                       <div className="p-6 space-y-4">
                         <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-xl font-bold text-white font-mono group-hover:text-cyan-300 transition-colors duration-300">
+                          <h3 className="text-xl font-bold text-gray-900 font-mono group-hover:text-cyan-700 transition-colors duration-300 dark:text-white dark:group-hover:text-cyan-300">
                             {project.title}
                           </h3>
                           <div className="flex gap-3 flex-shrink-0">
@@ -236,7 +235,7 @@ const ProjectsShowcase: React.FC = () => {
                                 href={project.links.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                                className="text-gray-500 hover:text-cyan-600 transition-colors duration-300 dark:text-gray-400 dark:hover:text-cyan-400"
                                 whileHover={{ y: -2 }}
                               >
                                 <svg
@@ -253,7 +252,7 @@ const ProjectsShowcase: React.FC = () => {
                                 href={project.links.live}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                                className="text-gray-500 hover:text-green-600 transition-colors duration-300 dark:text-gray-400 dark:hover:text-green-400"
                                 whileHover={{ y: -2 }}
                               >
                                 <svg
@@ -274,14 +273,14 @@ const ProjectsShowcase: React.FC = () => {
                           </div>
                         </div>
 
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-300">
                           {project.description}
                         </p>
 
                         {/* Metrics for Case Studies */}
                         {project.type === "case-study" && project.metrics && (
                           <div className="space-y-3">
-                            <h4 className="text-sm font-semibold text-purple-300 font-mono">
+                            <h4 className="text-sm font-semibold text-purple-600 font-mono dark:text-purple-300">
                               KEY_METRICS:
                             </h4>
                             <div className="grid grid-cols-2 gap-3">
@@ -289,12 +288,12 @@ const ProjectsShowcase: React.FC = () => {
                                 ([key, value]) => (
                                   <div
                                     key={key}
-                                    className="bg-gray-900/50 rounded-lg p-3 border border-gray-700"
+                                    className="bg-gray-50 rounded-lg p-3 border border-gray-200 dark:bg-gray-900/50 dark:border-gray-700"
                                   >
-                                    <div className="text-xs text-gray-400 font-mono">
+                                    <div className="text-xs text-gray-500 font-mono dark:text-gray-400">
                                       {key}
                                     </div>
-                                    <div className="text-lg font-bold text-cyan-300 font-mono">
+                                    <div className="text-lg font-bold text-cyan-600 font-mono dark:text-cyan-300">
                                       {value}
                                     </div>
                                   </div>
@@ -306,14 +305,14 @@ const ProjectsShowcase: React.FC = () => {
 
                         {/* Tech Stack */}
                         <div className="space-y-3">
-                          <h4 className="text-sm font-semibold text-green-300 font-mono">
+                          <h4 className="text-sm font-semibold text-green-600 font-mono dark:text-green-300">
                             TECH_STACK:
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {project.techStack.map((tech) => (
                               <span
                                 key={tech}
-                                className="px-3 py-1 bg-gray-900/50 rounded-full text-xs font-mono text-gray-300 border border-gray-700 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors duration-300"
+                                className="px-3 py-1 bg-gray-100 rounded-full text-xs font-mono text-gray-600 border border-gray-300 hover:border-cyan-500/30 hover:text-cyan-700 transition-colors duration-300 dark:bg-gray-900/50 dark:text-gray-300 dark:border-gray-700 dark:hover:border-cyan-500/50 dark:hover:text-cyan-300"
                               >
                                 {tech}
                               </span>
@@ -329,7 +328,7 @@ const ProjectsShowcase: React.FC = () => {
                           >
                             <Link
                               href={project.links.caseStudy}
-                              className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors duration-300 font-mono text-sm"
+                              className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 transition-colors duration-300 font-mono text-sm dark:text-purple-400 dark:hover:text-purple-300"
                             >
                               View Case Study
                               <svg
@@ -363,7 +362,7 @@ const ProjectsShowcase: React.FC = () => {
                 className="text-center py-16"
               >
                 <div className="text-6xl mb-4">🔍</div>
-                <p className="text-gray-400 font-mono">
+                <p className="text-gray-500 font-mono dark:text-gray-400">
                   No projects found in this category.
                 </p>
               </motion.div>
