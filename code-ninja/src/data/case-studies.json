@@ -1,0 +1,341 @@
+{
+  "caseStudies": {
+    "prompt-earn": {
+      "id": "prompt-earn",
+      "hero": {
+        "title": "SEO Growth for PromptEarn",
+        "client": "PromptEarn",
+        "duration": "6 months",
+        "overview": "During my 6 months at PromptEarn, I led SEO and affiliate growth, achieving a 250% increase in organic traffic, top 5 keyword rankings, and a 45% uplift in sales through technical SEO, Core Web Vitals optimization, and affiliate network expansion.",
+        "heroImage": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "technologies": [
+          "Ahrefs",
+          "Google Search Console",
+          "Google Analytics",
+          "Screaming Frog",
+          "PageSpeed Insights",
+          "Mailchimp"
+        ]
+      },
+      "challenge": {
+        "problem": "PromptEarn needed to boost organic traffic and affiliate-driven sales in a competitive market. The site suffered from slow load times, suboptimal SEO, and a stagnant affiliate network.",
+        "constraints": [
+          "Aggressive 6-month timeline",
+          "Large legacy affiliate base",
+          "Need for measurable, rapid results"
+        ],
+        "context": "Affiliate marketing and SEO are highly competitive in the Nigerian fintech space. PromptEarn aimed to outpace rivals by improving technical SEO and expanding its affiliate network.",
+        "metrics": [
+          "Organic traffic: 10,000/month",
+          "Affiliate partners: 40,000",
+          "Average PageSpeed score: 45",
+          "Bounce rate: 70%"
+        ]
+      },
+      "goals": {
+        "primary": [
+          "Increase organic traffic by 200%+",
+          "Expand affiliate network to 90,000+",
+          "Improve PageSpeed score by 30+ points",
+          "Achieve top 5 rankings for target keywords"
+        ],
+        "stakeholder": [
+          "Higher affiliate engagement",
+          "Improved user experience",
+          "Increased sales from organic and referral channels"
+        ],
+        "success": [
+          "250% organic traffic growth",
+          "Affiliate network doubled",
+          "Bounce rate reduced by 50%",
+          "45% increase in sales"
+        ]
+      },
+      "approach": {
+        "methodology": "Agile, data-driven SEO and affiliate marketing with weekly sprints and continuous measurement.",
+        "phases": [
+          {
+            "name": "SEO Audit & Quick Wins",
+            "duration": "2 weeks",
+            "activities": [
+              "Technical SEO audit",
+              "Core Web Vitals optimization",
+              "On-page SEO improvements"
+            ]
+          },
+          {
+            "name": "Affiliate Network Expansion",
+            "duration": "4 weeks",
+            "activities": [
+              "Targeted email campaigns",
+              "Affiliate onboarding improvements",
+              "Referral incentives"
+            ]
+          },
+          {
+            "name": "Content & Link Building",
+            "duration": "6 weeks",
+            "activities": [
+              "Keyword research",
+              "Content optimization",
+              "Outreach for backlinks"
+            ]
+          },
+          {
+            "name": "Performance & Reporting",
+            "duration": "4 weeks",
+            "activities": [
+              "Monitor rankings and traffic",
+              "A/B test landing pages",
+              "Monthly stakeholder reports"
+            ]
+          }
+        ],
+        "keyDecisions": [
+          {
+            "decision": "Prioritized Core Web Vitals",
+            "rationale": "Improved rankings and reduced bounce rate"
+          },
+          {
+            "decision": "Automated affiliate onboarding",
+            "rationale": "Enabled rapid network growth"
+          }
+        ],
+        "research": [
+          "Competitor analysis for top keywords",
+          "User feedback on site speed and navigation"
+        ],
+        "collaboration": "Weekly syncs with marketing and dev teams, monthly reviews with stakeholders.",
+        "iterations": [
+          "Refined landing pages based on bounce rate data",
+          "Streamlined affiliate sign-up flow"
+        ],
+        "userFeedback": "Affiliate partners and users reported improved site speed and easier navigation."
+      },
+      "results": {
+        "beforeAfter": [
+          {
+            "metric": "Organic Traffic",
+            "before": "10,000/month",
+            "after": "35,000/month",
+            "improvement": "+250%"
+          },
+          {
+            "metric": "Affiliate Partners",
+            "before": "40,000",
+            "after": "93,000",
+            "improvement": "+132%"
+          },
+          {
+            "metric": "PageSpeed Score",
+            "before": "45",
+            "after": "80",
+            "improvement": "+35 points"
+          },
+          {
+            "metric": "Bounce Rate",
+            "before": "70%",
+            "after": "35%",
+            "improvement": "-50%"
+          }
+        ],
+        "metrics": [
+          "45% increase in sales",
+          "60% improvement in user engagement",
+          "Top 5 ranking for key keywords"
+        ],
+        "deliverables": [
+          "SEO audit report",
+          "Affiliate onboarding flow",
+          "Optimized landing pages"
+        ],
+        "achievements": [
+          "Doubled affiliate network",
+          "250% organic traffic growth",
+          "Bounce rate halved"
+        ]
+      }
+    },
+    "welup-digital": {
+      "id": "welup-digital",
+      "hero": {
+        "title": "Modernizing Welup Digital’s Web Platform",
+        "client": "Welup Digital",
+        "duration": "Ongoing",
+        "overview": "Leading the ongoing rewrite of Welup Digital’s website from static HTML to Next.js, building a scalable CMS with Sanity for blogs and landing pages, and delivering major SEO, performance, and reliability improvements for the company and its clients.",
+        "heroImage": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Sanity",
+          "Vercel",
+          "Cloudflare",
+          "Ahrefs",
+          "Google Search Console",
+          "PageSpeed Insights"
+        ]
+      },
+      "challenge": {
+        "problem": "Welup Digital’s original site was static HTML/CSS/JS, limiting SEO, scalability, and content management. The business needed a modern, dynamic platform to support growth, content, and client delivery, while also withstanding DDoS attacks.",
+        "constraints": [
+          "Legacy static site migration",
+          "Solo developer for rewrite and CMS",
+          "Zero downtime during migration",
+          "Security and DDoS resilience"
+        ],
+        "context": "As Welup Digital grew, the need for a scalable, SEO-first, and content-driven platform became critical for both the agency and its clients.",
+        "metrics": [
+          "Static site: no CMS, poor SEO",
+          "Manual content updates",
+          "Downtime risk from DDoS",
+          "No blog or landing page system"
+        ]
+      },
+      "goals": {
+        "primary": [
+          "Migrate to Next.js for performance and SEO",
+          "Build a CMS for blogs and landing pages",
+          "Ensure 99.9% uptime and DDoS protection",
+          "Deliver scalable solutions for clients"
+        ],
+        "stakeholder": [
+          "Seamless migration with no downtime",
+          "Easy content management for non-devs",
+          "Consistent, high-quality UX"
+        ],
+        "success": [
+          "Zero downtime during migration",
+          "CMS launched for blogs and landing pages",
+          "Top 5 SEO rankings for key terms",
+          "Multiple client sites delivered and optimized"
+        ]
+      },
+      "approach": {
+        "methodology": "Incremental migration and feature delivery, focusing on performance, SEO, and content flexibility.",
+        "phases": [
+          {
+            "name": "Audit & Planning",
+            "duration": "2 weeks",
+            "activities": [
+              "SEO and performance audit",
+              "Migration roadmap",
+              "Requirements gathering"
+            ]
+          },
+          {
+            "name": "Next.js Rewrite",
+            "duration": "Ongoing",
+            "activities": [
+              "Rebuilding site in Next.js",
+              "Integrating Tailwind CSS and TypeScript",
+              "Setting up Vercel for CI/CD"
+            ]
+          },
+          {
+            "name": "CMS & Content",
+            "duration": "Ongoing",
+            "activities": [
+              "Implementing Sanity CMS",
+              "Developing blog and landing page system",
+              "Enabling non-dev content editing"
+            ]
+          },
+          {
+            "name": "Security & Uptime",
+            "duration": "Ongoing",
+            "activities": [
+              "Cloudflare DDoS protection",
+              "Monitoring and maintaining 99.9% uptime"
+            ]
+          },
+          {
+            "name": "SEO & Client Delivery",
+            "duration": "Ongoing",
+            "activities": [
+              "Technical SEO optimization",
+              "Launching and optimizing client websites",
+              "Continuous performance and UX improvements"
+            ]
+          }
+        ],
+        "keyDecisions": [
+          {
+            "decision": "Migrated to Next.js and server components",
+            "rationale": "Boosted performance, SEO, and maintainability"
+          },
+          {
+            "decision": "Built CMS with Sanity",
+            "rationale": "Enabled scalable, flexible content management"
+          },
+          {
+            "decision": "Adopted Cloudflare for security",
+            "rationale": "Mitigated DDoS attacks and ensured uptime"
+          }
+        ],
+        "research": [
+          "Benchmarked SEO and performance against top digital agencies",
+          "Analyzed user feedback for navigation and speed"
+        ],
+        "collaboration": "Working with founders and content team; leading all web, CMS, and SEO initiatives.",
+        "iterations": [
+          "Continuous SEO and performance tuning",
+          "Refining CMS and UX based on analytics and feedback"
+        ],
+        "userFeedback": "Team and clients praise the new CMS, site speed, and improved search visibility."
+      },
+      "results": {
+        "beforeAfter": [
+          {
+            "metric": "Site Uptime",
+            "before": "Frequent downtime risk",
+            "after": "99.99% uptime",
+            "improvement": "Resilient to DDoS"
+          },
+          {
+            "metric": "SEO Ranking",
+            "before": "Unranked",
+            "after": "Top 5 for key terms",
+            "improvement": "Major SEO gains"
+          },
+          {
+            "metric": "Content Management",
+            "before": "Manual, dev-only",
+            "after": "Sanity CMS for all content",
+            "improvement": "Full flexibility"
+          },
+          {
+            "metric": "Client Sites Delivered",
+            "before": "0",
+            "after": "5+ launched",
+            "improvement": "Full delivery"
+          }
+        ],
+        "metrics": [
+          "99.99% uptime during DDoS",
+          "Top 5 SEO rankings",
+          "5+ client sites delivered",
+          "CMS for blogs and landing pages"
+        ],
+        "testimonials": [
+          {
+            "name": "Adaeze Nwosu",
+            "role": "Demo Client",
+            "quote": "Andy is leading our web platform’s transformation—our new CMS and site are fast, reliable, and easy for the whole team. Our SEO and client delivery have never been stronger."
+          }
+        ],
+        "deliverables": [
+          "Modern Next.js web platform",
+          "Sanity CMS for content",
+          "DDoS-resilient infrastructure",
+          "Multiple client websites"
+        ],
+        "achievements": [
+          "Zero downtime migration",
+          "Major SEO and client delivery wins",
+          "CMS and content system for the team"
+        ]
+      }
+    }
+  }
+}

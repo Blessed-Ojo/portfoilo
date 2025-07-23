@@ -12,6 +12,7 @@ interface SpotifyTrack {
 export default function SpotifyNowPlaying() {
   const [track, setTrack] = useState<SpotifyTrack | null>(null);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading , setIsLoading]= useState(true);
@@ -64,6 +65,21 @@ export default function SpotifyNowPlaying() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setShowTooltip(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setShowTooltip(false);
+    }, 300); // 300ms delay
+    setHoverTimeout(timeout);
+  };
+
   const containerBaseStyles = `
     fixed bottom-6 right-6 z-50 
     transition-all duration-500 ease-out
@@ -107,11 +123,53 @@ export default function SpotifyNowPlaying() {
 
   return (
     <div className={`${containerBaseStyles} ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
+      {/* Hover Tooltip */}
+      {showTooltip && (
+        <div 
+          className="absolute bottom-full right-0 mb-2 w-80 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg shadow-2xl p-4 z-60 transform transition-all duration-300 ease-out"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex gap-4">
+            <img
+              src={track.album.images[1]?.url || track.album.images[0]?.url}
+              alt={track.album.name}
+              className="w-16 h-16 rounded-lg border border-gray-200 dark:border-slate-600"
+            />
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold text-base text-gray-900 dark:text-slate-100 mb-1 truncate">{track.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-slate-400 mb-2 truncate">
+                by {track.artists.map((a) => a.name).join(", ")}
+              </p>
+              <p className="text-xs text-gray-500 dark:text-slate-500 mb-1 truncate">
+                Album: {track.album.name}
+              </p>
+              <p className="text-xs text-gray-500 dark:text-slate-500 mb-3">
+                Released: {new Date(track.album.release_date).getFullYear()}
+              </p>
+              <a 
+                href={track.external_urls.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                 Open in Spotify ↗
+                  </a>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <a
         href={track.external_urls.spotify}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${panelBaseStyles} bg-white dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 border-gray-300 dark:border-slate-700/50 text-gray-900 dark:text-slate-100 hover:shadow-green-300 dark:hover:shadow-green-900/30 group`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`${panelBaseStyles} bg-white dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 border-gray-300 dark:border-slate-700/50 text-gray-900 dark:text-slate-100 hover:shadow-green-300 dark:hover:shadow-green-900/30 hover:scale-105 group`}
       >
         <div className="relative">
           <div className="absolute inset-0 bg-green-400/10 dark:bg-green-400/20 rounded-lg blur-md animate-pulse" />
@@ -126,7 +184,7 @@ export default function SpotifyNowPlaying() {
         </div>
 
         <div className="flex flex-col items-start min-w-0 flex-1">
-          <span className="font-mono text-xs text-green-600 dark:text-green-400 font-bold tracking-wider">{track.isPlaying ? "▶ PLAYING" : "⏸ RECENT"}</span>
+          <span className="font-mono text-xs text-green-600 dark:text-green-400 font-bold tracking-wider">{track.isPlaying ? "▶ PLAYING" : "⏸ LAST PLAYED"}</span>
           <span className="font-semibold text-sm truncate w-full mt-1">{track.name}</span>
           <span className="text-xs truncate w-full font-mono text-gray-600 dark:text-slate-400">{track.artists.map((a) => a.name).join(" • ")}</span>
         </div>
