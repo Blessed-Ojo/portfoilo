@@ -225,7 +225,7 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
           className="transform-gpu"
         >
           <Link
-            href="/"
+            href="/projects"
             className="inline-flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 p-3 rounded-lg hover:bg-white/60 dark:hover:bg-gray-800/60 hover:shadow-lg backdrop-blur-sm"
           >
             <ArrowLeftIcon className="w-5 h-5" />
@@ -586,7 +586,7 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
             transition={{ duration: 0.5 }}
           >
             <Link
-              href="/"
+              href="/projects"
               className="inline-flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-300 hover:scale-105 p-4 rounded-xl hover:bg-white/60 dark:hover:bg-gray-800/60 hover:shadow-lg backdrop-blur-sm border border-white/30 dark:border-gray-700/30"
             >
               <ArrowLeftIcon className="w-5 h-5" />
