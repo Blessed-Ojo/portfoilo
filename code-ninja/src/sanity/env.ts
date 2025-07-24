@@ -1,23 +1,20 @@
-/**
- * Environment variables for Sanity configuration
- */
+export const apiVersion =
+  process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2025-07-24'
 
-/**
- * The Sanity project ID from environment variables
- */
-export const projectId: string | undefined = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+export const dataset = assertValue(
+  process.env.NEXT_PUBLIC_SANITY_DATASET,
+  'Missing environment variable: NEXT_PUBLIC_SANITY_DATASET'
+)
 
-/**
- * The Sanity dataset name from environment variables
- * Defaults to 'production' if not specified
- */
-export const dataset: string | undefined = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"
+export const projectId = assertValue(
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
+)
 
-/**
- * Validates that required environment variables are set
- * @returns True if all required variables are set, false otherwise
- */
-export const validateEnv = (): boolean => {
-  return Boolean(projectId && dataset)
+function assertValue<T>(v: T | undefined, errorMessage: string): T {
+  if (v === undefined) {
+    throw new Error(errorMessage)
+  }
+
+  return v
 }
-
