@@ -1,8 +1,15 @@
-import type { StructureBuilder } from "sanity/desk"
+import type {StructureResolver} from 'sanity/structure'
 
-/**
- * Customizes the structure of the Sanity Studio sidebar
- * @see https://www.sanity.io/docs/structure-builder-cheat-sheet
- */
-export const structure = (S: StructureBuilder) => S.list().title("Content").items(S.documentTypeListItems())
-
+// https://www.sanity.io/docs/structure-builder-cheat-sheet
+export const structure: StructureResolver = (S) =>
+  S.list()
+    .title('Blog')
+    .items([
+      S.documentTypeListItem('post').title('Posts'),
+      S.documentTypeListItem('category').title('Categories'),
+      S.documentTypeListItem('author').title('Authors'),
+      S.divider(),
+      ...S.documentTypeListItems().filter(
+        (item) => item.getId() && !['post', 'category', 'author'].includes(item.getId()!),
+      ),
+    ])

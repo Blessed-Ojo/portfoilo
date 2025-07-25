@@ -1,16 +1,10 @@
-import type { DocumentSchema } from "../lib/types"
-import post from "./post"
-import category from "./category"
+import { type SchemaTypeDefinition } from 'sanity'
 
-/**
- * Array of all schema types
- */
-export const schemaTypes: DocumentSchema[] = [post, category]
+import {blockContentType} from './blockContentType'
+import {categoryType} from './categoryType'
+import {postType} from './postType'
+import {authorType} from './authorType'
 
-/**
- * Schema configuration object
- */
-export const schema = {
-  types: schemaTypes,
+export const schema: { types: SchemaTypeDefinition[] } = {
+  types: [blockContentType, categoryType, postType, authorType],
 }
-
