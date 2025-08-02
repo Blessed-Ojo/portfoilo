@@ -14,22 +14,22 @@ import SpotifyNowPlaying from "@/components/spotify-now-playing";
 
 const socialLinks = [
   {
-    href: "https://github.com/AndersonDesign1",
+    href: "https://github.com/Blessed-Ojo",
     icon: faGithub,
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/anderson-josh/",
+    href: "https://www.linkedin.com/in/ojo-blessed/",
     icon: faLinkedin,
     label: "LinkedIn",
   },
   {
-    href: "https://x.com/HeyItsAndersonJ",
+    href: "https://x.com/dev_ojoblessed",
     icon: faXTwitter,
     label: "X",
   },
   {
-    href: "https://www.instagram.com/josephandy_official/",
+    href: "https://www.instagram.com/blessedcode_official/",
     icon: faInstagram,
     label: "Instagram",
   },
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-purple-50/80 to-pink-50/80 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20" />
       </div>
       {/* Main Footer Content */}
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-16 py-4 relative z-10">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-16 py-6 relative z-10">
         <div className="flex flex-col items-center space-y-4">
           
           {/* Spotify Component */}

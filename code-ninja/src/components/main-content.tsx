@@ -11,7 +11,6 @@ export default function MainContent() {
        <ProjectGrid/>
        <WorkHistory/>
        <SkillsSection/>
-       {/* Now playing component */}
 
     </main>
   )
