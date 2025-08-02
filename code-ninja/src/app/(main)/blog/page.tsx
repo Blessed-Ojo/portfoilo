@@ -1,4 +1,4 @@
-import BlogList from "../bloglist";
+import BlogList from "../blog/bloglist";
 import { client } from "@/sanity/lib/client";
 import type { Metadata } from "next";
 
