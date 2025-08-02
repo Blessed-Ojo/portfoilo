@@ -17,7 +17,7 @@ export async function sendEmail(
    }
    try {
      await resend.emails.send({
-          from:"Contact Form<contact@ojoblessed.com>",
+          from:"Contact Form <contact@ojoblessed.com>",
           to:["ojoblessed533@gmail.com"],
           subject:subject || "New Contact Form Submission",
           replyTo:email,
