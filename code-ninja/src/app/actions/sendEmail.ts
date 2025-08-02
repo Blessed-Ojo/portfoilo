@@ -11,13 +11,14 @@ export async function sendEmail(
    const email = formData.get("email") as string;
    const subject = formData.get("subject") as string;
    const message = formData.get("message")as string;
-
-   if (!name ||!email||message){
+     // Add some debugging
+   
+   if (!name || !subject ||!email||!message){
      return{success:false, message:"All field are required"};
    }
    try {
      await resend.emails.send({
-          from:"Contact Form <contact@ojoblessed.com>",
+          from:"Contact Form <onboarding@resend.dev>",
           to:["ojoblessed533@gmail.com"],
           subject:subject || "New Contact Form Submission",
           replyTo:email,
@@ -29,6 +30,7 @@ export async function sendEmail(
 
           `,
      });
+  
      return{
            success:true,
            message:"Message sent! I'll get back to you soon.",
