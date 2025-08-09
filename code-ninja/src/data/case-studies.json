@@ -156,35 +156,33 @@
         ]
       }
     },
-    "welup-digital": {
-      "id": "welup-digital",
+    "nature-entertainment": {
+      "id": "nature-entertainment",
       "hero": {
-        "title": "Modernizing Welup Digital’s Web Platform",
-        "client": "Welup Digital",
-        "duration": "Ongoing",
-        "overview": "Leading the ongoing rewrite of Welup Digital’s website from static HTML to Next.js, building a scalable CMS with Sanity for blogs and landing pages, and delivering major SEO, performance, and reliability improvements for the company and its clients.",
+        "title": "Modernizing nature-entertainment Web Platform",
+        "client": "nature entertainment",
+        "duration": "Done",
+        "overview": "Leading the nature-entertainment website with static HTML , building a scalable Web where online active like buying tickets can be done, performance, and reliability improvements for the company and its clients.",
         "heroImage": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
         "technologies": [
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "Sanity",
+          "Html",
+          "JavaScript",
+          "CSS",
+          "Python",
           "Vercel",
-          "Cloudflare",
-          "Ahrefs",
-          "Google Search Console",
-          "PageSpeed Insights"
+          "Fast api"
+          
         ]
       },
       "challenge": {
-        "problem": "Welup Digital’s original site was static HTML/CSS/JS, limiting SEO, scalability, and content management. The business needed a modern, dynamic platform to support growth, content, and client delivery, while also withstanding DDoS attacks.",
+        "problem": " The business needed a way to make services easy for users, dynamic platform to support growth, content, and client delivery, while also withstanding DDoS attacks.",
         "constraints": [
           "Legacy static site migration",
           "Solo developer for rewrite and CMS",
           "Zero downtime during migration",
           "Security and DDoS resilience"
         ],
-        "context": "As Welup Digital grew, the need for a scalable, SEO-first, and content-driven platform became critical for both the agency and its clients.",
+        "context": "As nature-entertainment grew, the need for a scalable, SEO-first, and content-driven platform became critical for both the agency and its clients.",
         "metrics": [
           "Static site: no CMS, poor SEO",
           "Manual content updates",
@@ -321,7 +319,7 @@
           {
             "name": "Adaeze Nwosu",
             "role": "Demo Client",
-            "quote": "Andy is leading our web platform’s transformation—our new CMS and site are fast, reliable, and easy for the whole team. Our SEO and client delivery have never been stronger."
+            "quote": "Blessed is leading our web platform’s transformation—our new CMS and site are fast, reliable, and easy for the whole team. Our SEO and client delivery have never been stronger."
           }
         ],
         "deliverables": [

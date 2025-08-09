@@ -1,11 +1,11 @@
 {
   "workExperience": [
     {
-      "id": "welup-digital-fullstack-developer",
-      "company": "Welup Digital",
+      "id": "nature-entertainment-fullstack-developer",
+      "company": "nature-entertainment",
       "position": "Full Stack Developer",
-      "location": "Benin City, Nigeria",
-      "startDate": "2021-09-01",
+      "location": "Lagos City, Nigeria",
+      "startDate": "2025-09-01",
       "endDate": null,
       "current": true,
       "description": "Implemented responsive design principles across all platforms and developed/optimized dynamic client websites using effective SEO strategies.",
@@ -18,21 +18,17 @@
         "HTML",
         "CSS",
         "JavaScript",
-        "React",
-        "Tailwind CSS",
-        "Bootstrap",
-        "WordPress",
-        "Next.js",
-        "Framer Motion"
+        "Python",
+        "Bootstrap"
       ],
-      "companyUrl": "https://welupdigital.com"
+      "companyUrl": "https://nature-entertainment.vercel.app/"
     },
     {
-      "id": "welup-digital-seo-specialist",
-      "company": "Welup Digital",
+      "id": "nature-entertainment-seo-specialist",
+      "company": "nature entertainment",
       "position": "SEO Specialist",
-      "location": "Benin City, Nigeria",
-      "startDate": "2023-01-01",
+      "location": "Lagos City, Nigeria",
+      "startDate": "2025-04-01",
       "endDate": null,
       "current": true,
       "description": "Developed and executed comprehensive SEO strategies to significantly boost website traffic, visibility, and user engagement.",
@@ -49,7 +45,7 @@
         "SEMrush",
         "Search Console"
       ],
-      "companyUrl": "https://welupdigital.com"
+      "companyUrl": "https://nature-entertainment.vercel.app/"
     },
     {
       "id": "kyrus-recycling-lead-developer",

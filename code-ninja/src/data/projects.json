@@ -3,21 +3,19 @@
     {
       "id": "1",
       "type": "case-study",
-      "title": "Full-Stack Web & SEO Architect at Welup Digital",
-      "description": "Built and fine-tuned Welup Digital’s core platforms for top-notch SEO, speed, and UX. Also crafted and optimized client sites, boosting traffic and online impact with smart, modern web strategies.",
-      "thumbnail": "/welup-digital.webp",
+      "title": "Full-Stack Web & SEO Architect at nature entertainment",
+      "description": "Built and fine-tuned nature-entertainment core platforms for top-notch SEO, speed, and UX. Also crafted and optimized client sites, boosting traffic and online impact with smart, modern web strategies.",
+      "thumbnail": "/nature.webp",
       "techStack": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "PostgreSQL",
-        "Redis",
+        "Html",
+        "JavaScript",
+        "CSS",
         "SEO Analytics Tools",
         "Content Management Systems"
       ],
       "links": {
-        "live": "https://welupdigital.com",
-        "caseStudy": "/case-studies/welup-digital"
+        "live": "https://nature-entertainment.vercel.app",
+        "caseStudy": "/case-studies/nature-entertainment"
       },
       "metrics": {
         "Website Traffic": "+300% increase after relaunch",

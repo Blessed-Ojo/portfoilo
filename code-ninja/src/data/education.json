@@ -1,48 +1,48 @@
 {
   "education": [
     {
-      "id": "mckinsey-forward-program",
-      "institution": "McKinsey & Company",
-      "degree": "Program Completion",
-      "field": "Leadership Development",
-      "location": "Online",
-      "startDate": "2024-07-01",
-      "endDate": "2024-07-31",
-      "gpa": null,
-      "institutionUrl": "https://www.mckinsey.com/forward"
-    },
-    {
-      "id": "coursera-advanced-seo-tactics",
+      "id": "Introduction to Front-End Development",
       "institution": "Coursera",
       "degree": "Certificate",
-      "field": "Advanced Content and Social Tactics to Optimize SEO",
+      "field": "Web Development",
       "location": "Online",
-      "startDate": "2024-01-01",
-      "endDate": "2024-01-31",
+      "startDate": "2023-08-1",
+      "endDate": "2023-08-31",
       "gpa": null,
-      "institutionUrl": "https://coursera.org/verify/QGGVKP45U9MW"
+      "institutionUrl": "https://www.coursera.org/account/accomplishments/certificate/AU4GBRYXTQAR"
     },
     {
-      "id": "freecodecamp-js-algorithms",
-      "institution": "freeCodeCamp",
-      "degree": "Certification",
-      "field": "JavaScript Algorithms and Data Structures",
+      "id": "Programming with JavaScript",
+      "institution": "Coursera",
+      "degree": "Certificate",
+      "field": "Programming with JavaScript",
       "location": "Online",
-      "startDate": "2023-01-01",
-      "endDate": "2023-12-31",
+      "startDate": "2023-09-01",
+      "endDate": "2023-09-31",
+      "gpa": null,
+      "institutionUrl": "https://coursera.org/verify/K4LSZSUEP2VQ"
+    },
+    {
+      "id": "Advanced React",
+      "institution": "Coursera",
+      "degree": "Certification",
+      "field": "Advanced React",
+      "location": "Online",
+      "startDate": "2023-11-01",
+      "endDate": "2023-11-31",
       "gpa": null,
       "honors": [],
       "relevantCourses": [
-        "ES6",
+        "Jest (JavaScript Testing Framework)",
         "Regular Expressions",
-        "Debugging",
+        "Unit Testing",
         "Basic Data Structures",
-        "Algorithm Scripting"
+        "Event-Driven Programming"
       ],
       "projects": [
-        "Completed all required projects for the JavaScript Algorithms and Data Structures certification."
+        "Create robust and reusable components with advanced techniques and learn different patterns to reuse common behavior."
       ],
-      "institutionUrl": "https://freecodecamp.org/certification/fccb3aeb8e2-e79c-4716-a0eb-ab81a2aeccc1/javascript-algorithms-and-data-structures"
+      "institutionUrl": "https://coursera.org/verify/K4LSZSUEP2VQ"
     },
     {
       "id": "coursera-optimize-google-search",
@@ -53,7 +53,7 @@
       "startDate": "2023-09-01",
       "endDate": "2023-09-30",
       "gpa": null,
-      "institutionUrl": "https://coursera.org/verify/3H7ZVVUWS6Q6"
+      "institutionUrl": "https://coursera.org/verify/3H7ZVVUWS6Q"
     },
     {
       "id": "coursera-intro-google-seo",
@@ -64,7 +64,7 @@
       "startDate": "2023-01-01",
       "endDate": "2023-12-31",
       "gpa": null,
-      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WHCFRV6J3MW9"
+      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WHCFRV6J3MW"
     },
     {
       "id": "coursera-google-seo-fundamentals",
@@ -75,7 +75,7 @@
       "startDate": "2023-01-01",
       "endDate": "2023-12-31",
       "gpa": null,
-      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WXVUPBHNSW6Y"
+      "institutionUrl": "https://www.coursera.org/account/accomplishments/verify/WXVUPBHSW6Y"
     },
     {
       "id": "nabteb-computer-science",
