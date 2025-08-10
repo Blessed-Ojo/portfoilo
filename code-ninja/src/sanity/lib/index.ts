@@ -8,5 +8,5 @@ export * from "./live"
 /**
  * Re-export environment variables
  */
-export { projectId, dataset, validateEnv } from "../env"
+export { projectId, dataset } from "../env"
 
