@@ -11,22 +11,19 @@ import {
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
 
-// Animation Variants
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50, z: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100
-    },
-  },
-};
+// Type definitions
+interface IconProps {
+  className?: string;
+  [key: string]: unknown;
+}
 
+interface FunFact {
+  icon: React.ComponentType<IconProps>;
+  title: string;
+  description: string;
+}
+
+// Animation Variants
 const float3D: Variants = {
   hidden: { 
     opacity: 0, 
@@ -220,7 +217,7 @@ const AnimatedIcon = ({
   gradientFrom = "blue-500",
   gradientTo = "purple-500"
 }: { 
-  Icon: React.ComponentType<any>;
+  Icon: React.ComponentType<IconProps>;
   className?: string;
   gradientFrom?: string;
   gradientTo?: string;
@@ -242,16 +239,14 @@ const ProfessionalCard = ({
   stats, 
   gradientFrom, 
   gradientTo,
-  hoverColor,
   delay = 0
 }: {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<IconProps>;
   title: string;
   description: string;
   stats: string[];
   gradientFrom: string;
   gradientTo: string;
-  hoverColor: string;
   delay?: number;
 }) => (
   <Card3D delay={delay}>
@@ -262,25 +257,21 @@ const ProfessionalCard = ({
           gradientFrom={gradientFrom} 
           gradientTo={gradientTo}
         />
-        <h3 className={`text-2xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors`}>
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {title}
         </h3>
       </div>
-      <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80`}>
+      <div className="p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80">
         <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
           {description}
         </p>
         <ul className="list-none space-y-3 text-gray-600 dark:text-gray-400">
-          {stats.map((stat, index) => {
-            const colors = ['blue', 'purple', 'pink', 'green'];
-            const color = colors[index % colors.length];
-            return (
-              <li key={index} className={`flex items-center gap-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors`}>
-                <span className={`w-2 h-2 bg-blue-500 rounded-full`}></span>
-                {stat}
-              </li>
-            );
-          })}
+          {stats.map((stat, index) => (
+            <li key={index} className="flex items-center gap-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+              {stat}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -291,32 +282,30 @@ const ProfessionalCard = ({
 const TechnicalSkillCard = ({ 
   title, 
   skills, 
-  color, 
   delay = 0 
 }: {
   title: string;
   skills: string[];
-  color: string;
   delay?: number;
 }) => (
   <Card3D delay={delay}>
-    <div className={`p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80 group`}>
-      <h4 className={`font-bold mb-6 text-blue-600 dark:text-blue-400 flex items-center gap-3 text-xl`}>
+    <div className="p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:bg-white/80 dark:hover:bg-gray-800/80 group">
+      <h4 className="font-bold mb-6 text-blue-600 dark:text-blue-400 flex items-center gap-3 text-xl">
         <motion.span 
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className={`w-3 h-3 bg-blue-500 rounded-full`}
+          className="w-3 h-3 bg-blue-500 rounded-full"
         />
         {title}
       </h4>
       <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-        {skills.map((skill, i) => (
+        {skills.map((skill) => (
           <motion.li 
             key={skill}
             whileHover={{ x: 10, scale: 1.05 }}
             className="flex items-center gap-3 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
           >
-            <span className={`text-blue-500 text-lg`}>▸</span> 
+            <span className="text-blue-500 text-lg">▸</span> 
             {skill}
           </motion.li>
         ))}
@@ -330,12 +319,10 @@ const FunFactCard = ({
   fact, 
   index 
 }: { 
-  fact: typeof funFacts[0]; 
+  fact: FunFact; 
   index: number;
 }) => {
   const Icon = fact.icon;
-  const colors = ['blue', 'purple', 'pink', 'green'];
-  const color = colors[index % colors.length];
   
   return (
     <Card3D delay={index * 0.1}>
@@ -344,9 +331,9 @@ const FunFactCard = ({
           <motion.div 
             whileHover={{ rotateY: 180, scale: 1.1 }}
             transition={{ duration: 0.6 }}
-            className={`p-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl border border-blue-500/30 shadow-lg`}
+            className="p-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-2xl border border-blue-500/30 shadow-lg"
           >
-            <Icon className={`w-8 h-8 text-blue-600 dark:text-blue-400`} />
+            <Icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </motion.div>
           <div className="flex-1">
             <h3 className="font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-3 text-xl">
@@ -383,11 +370,11 @@ const CallToAction = () => (
 );
 
 // Data
-const funFacts = [
+const funFacts: FunFact[] = [
   {
     icon: CodeBracketIcon,
     title: "Teaching & Mentorship",
-    description: "I love sharing what I know—I've taught and mentored over 1,000 students (and counting), helping others break into tech and level up their skills.",
+    description: "I love sharing what I know—I&apos;ve taught and mentored over 1,000 students (and counting), helping others break into tech and level up their skills.",
   },
   {
     icon: ChartBarIcon,
@@ -397,12 +384,12 @@ const funFacts = [
   {
     icon: ServerIcon,
     title: "Modern Infrastructure Explorer",
-    description: "I'm obsessed with how modern infrastructure works. I spend hours reading docs, case studies, and exploring how big tech companies build and scale their systems.",
+    description: "I&apos;m obsessed with how modern infrastructure works. I spend hours reading docs, case studies, and exploring how big tech companies build and scale their systems.",
   },
   {
     icon: SparklesIcon,
     title: "Driven by Doubt",
-    description: "I've spent a lot of my life proving people wrong about how I am or how I would end up. It's the reason I'm obsessed with building perfect solutions.",
+    description: "I&apos;ve spent a lot of my life proving people wrong about how I am or how I would end up. It&apos;s the reason I&apos;m obsessed with building perfect solutions.",
   },
 ];
 
@@ -410,7 +397,7 @@ const professionalData = {
   seo: {
     icon: ChartBarIcon,
     title: "SEO Optimization Expert",
-    description: "I've helped businesses increase their organic traffic by an average of 285%. My approach combines technical SEO mastery with content strategy, focusing on sustainable, white-hat techniques.",
+    description: "I&apos;ve helped businesses increase their organic traffic by an average of 285%. My approach combines technical SEO mastery with content strategy, focusing on sustainable, white-hat techniques.",
     stats: [
       "Improved Core Web Vitals for 20+ websites",
       "Increased traffic 400% for an e-commerce client",
@@ -418,8 +405,7 @@ const professionalData = {
       "Recovered 5+ sites from Google penalties"
     ],
     gradientFrom: "blue-500",
-    gradientTo: "purple-500",
-    hoverColor: "blue"
+    gradientTo: "purple-500"
   },
   development: {
     icon: CodeBracketIcon,
@@ -432,26 +418,22 @@ const professionalData = {
       "Implemented CI/CD pipelines for fast deploys"
     ],
     gradientFrom: "purple-500",
-    gradientTo: "pink-500",
-    hoverColor: "purple"
+    gradientTo: "pink-500"
   }
 };
 
 const technicalSkills = [
   {
     title: "Cloud & DevOps",
-    skills: ["AWS/GCP", "Docker, K8s", "Infrastructure as Code"],
-    color: "blue"
+    skills: ["AWS/GCP", "Docker, K8s", "Infrastructure as Code"]
   },
   {
     title: "Performance",
-    skills: ["DB Optimization", "Redis, CDN Caching", "Load balancing"],
-    color: "purple"
+    skills: ["DB Optimization", "Redis, CDN Caching", "Load balancing"]
   },
   {
     title: "SEO Skills",
-    skills: ["Core Web Vitals", "Schema & markup", "Audit & indexing"],
-    color: "pink"
+    skills: ["Core Web Vitals", "Schema & markup", "Audit & indexing"]
   }
 ];
 
@@ -505,7 +487,7 @@ const AboutPage: React.FC = () => {
               transform: "translateZ(20px)"
             }}
           >
-            I'm a passionate full-stack developer with expertise in SEO and infrastructure. My journey started after winning a scholarship to learn a tech skill for a year—choosing development because of a childhood obsession with computers and how things work. Now, I create digital experiences that look beautiful and perform exceptionally well.
+            I&apos;m a passionate full-stack developer with expertise in SEO and infrastructure. My journey started after winning a scholarship to learn a tech skill for a year—choosing development because of a childhood obsession with computers and how things work. Now, I create digital experiences that look beautiful and perform exceptionally well.
           </motion.p>
         </motion.div>
       </Section>
@@ -552,9 +534,9 @@ const AboutPage: React.FC = () => {
       {/* Call to Action */}
       <Section>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center space-y-12">
-          <SectionTitle>Let's Build Together</SectionTitle>
+          <SectionTitle>Let&apos;s Build Together</SectionTitle>
           <motion.p variants={float3D} className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 text-xl leading-relaxed bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/20">
-            Need help with SEO, dev, or infra? Let's collaborate and build something impactful.
+            Need help with SEO, dev, or infra? Let&apos;s collaborate and build something impactful.
           </motion.p>
           <CallToAction />
         </motion.div>

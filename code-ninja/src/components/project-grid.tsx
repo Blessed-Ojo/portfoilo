@@ -6,7 +6,6 @@ import Image from "next/image";
 import projectsData from "../data/projects.json";
 import {
   ArrowRight,
-  ExternalLink,
   Github,
   Eye,
   FileText,
@@ -42,7 +41,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
       transition: {
         duration: 0.6,
         delay: index * 0.15,
-        ease: "easeOut" as const, // Fixed: changed from number array to string literal
+        ease: "easeOut" as const,
       },
     },
   };
@@ -50,7 +49,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
   const hoverVariants = {
     scale: 1.03,
     y: -8,
-    transition: { duration: 0.3, ease: "easeOut" as const }, // Fixed: added type assertion
+    transition: { duration: 0.3, ease: "easeOut" as const },
   };
 
   return (
@@ -70,7 +69,6 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({
         {/* Image Container */}
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            
             src={project.thumbnail}
             alt={project.title}
             fill
@@ -226,7 +224,7 @@ const ProjectsGrid: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const }, // Fixed: changed from number array
+      transition: { duration: 0.8, ease: "easeOut" as const },
     },
   };
 

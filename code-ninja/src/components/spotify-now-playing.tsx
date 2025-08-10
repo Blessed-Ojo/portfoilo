@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface SpotifyTrack {
   name: string;
@@ -131,10 +132,12 @@ export default function SpotifyNowPlaying() {
           onMouseLeave={handleMouseLeave}
         >
           <div className="flex gap-4">
-            <img
+            <Image
               src={track.album.images[1]?.url || track.album.images[0]?.url}
               alt={track.album.name}
-              className="w-16 h-16 rounded-lg border border-gray-200 dark:border-slate-600"
+              width={80}
+              height={64}
+              className="rounded-lg border border-gray-200 dark:border-slate-600 object-cover"
             />
             <div className="flex-1 min-w-0">
               <h3 className="font-bold text-base text-gray-900 dark:text-slate-100 mb-1 truncate">{track.name}</h3>
@@ -171,12 +174,14 @@ export default function SpotifyNowPlaying() {
         onMouseLeave={handleMouseLeave}
         className={`${panelBaseStyles} bg-white dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-slate-800/95 dark:to-slate-900/95 border-gray-300 dark:border-slate-700/50 text-gray-900 dark:text-slate-100 hover:shadow-green-300 dark:hover:shadow-green-900/30 hover:scale-105 group`}
       >
-        <div className="relative">
+        <div className="relative w-10 h-10">
           <div className="absolute inset-0 bg-green-400/10 dark:bg-green-400/20 rounded-lg blur-md animate-pulse" />
-          <img
+          <Image
             src={track.album.images[2]?.url || track.album.images[0]?.url}
             alt={track.name}
-            className="relative w-10 h-10 rounded-lg border border-gray-300 dark:border-slate-600"
+            width={40}
+            height={40}
+            className="relative rounded-lg border border-gray-300 dark:border-slate-600"
           />
           {track.isPlaying && (
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse" />

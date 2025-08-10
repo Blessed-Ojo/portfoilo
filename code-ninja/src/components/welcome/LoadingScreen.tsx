@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 interface LoadingScreenProps {
   loadingProgress: number;
@@ -8,6 +9,12 @@ interface LoadingScreenProps {
 }
 
 export default function LoadingScreen({ loadingProgress, onComplete }: LoadingScreenProps) {
+  useEffect(() => {
+    if (loadingProgress >= 100 && onComplete) {
+      onComplete();
+    }
+  }, [loadingProgress, onComplete]);
+
   return (
     <motion.div 
       className="fixed inset-0 bg-black z-50 flex items-center justify-center flex-col overflow-hidden"

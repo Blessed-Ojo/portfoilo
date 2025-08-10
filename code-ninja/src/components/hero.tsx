@@ -172,7 +172,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Full-stack developer who geeks out over SEO and software
-            infrastructure. I'm obsessed with crafting web experiences that
+            infrastructure. I&apos;m obsessed with crafting web experiences that
             are lightning-fast, generate revenue and solve problems.
           </motion.p>
 

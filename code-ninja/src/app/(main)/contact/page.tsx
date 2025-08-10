@@ -10,21 +10,6 @@ import { sendEmail } from "@/app/actions/sendEmail";
 import { Mail, MessageSquare, User, Send } from "lucide-react";
 
 // Animation Variants
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50, z: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100
-    },
-  },
-};
-
 const float3D: Variants = {
   hidden: { 
     opacity: 0, 
@@ -169,6 +154,12 @@ const Card3D = ({
   </motion.div>
 );
 
+// Type definitions for better type safety
+interface IconProps {
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Animated Icon Component
 const AnimatedIcon = ({ 
   Icon, 
@@ -176,7 +167,7 @@ const AnimatedIcon = ({
   gradientFrom = "blue-500",
   gradientTo = "purple-500"
 }: { 
-  Icon: React.ComponentType<any>;
+  Icon: React.ComponentType<IconProps>;
   className?: string;
   gradientFrom?: string;
   gradientTo?: string;
@@ -191,6 +182,15 @@ const AnimatedIcon = ({
 );
 
 // Enhanced Form Field Component
+interface FormFieldType {
+  label: string;
+  name: string;
+  type: string;
+  value: string;
+  error?: string;
+  placeholder: string;
+}
+
 const FormField = ({ 
   field, 
   onChange, 
@@ -198,9 +198,9 @@ const FormField = ({
   gradientFrom,
   gradientTo 
 }: {
-  field: any;
+  field: FormFieldType;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<IconProps>;
   gradientFrom: string;
   gradientTo: string;
 }) => (
@@ -316,7 +316,17 @@ export default function ContactPage() {
     });
   }
 
-  const formFields = [
+  const formFields: Array<{
+    label: string;
+    name: string;
+    type: string;
+    value: string;
+    error?: string;
+    placeholder: string;
+    icon: React.ComponentType<IconProps>;
+    gradientFrom: string;
+    gradientTo: string;
+  }> = [
     {
       label: "Your Name",
       name: "name",
@@ -345,7 +355,7 @@ export default function ContactPage() {
       type: "text",
       value: form.subject,
       error: undefined,
-      placeholder: "What's this about?",
+      placeholder: "What is this about?",
       icon: MessageSquare,
       gradientFrom: "pink-500",
       gradientTo: "orange-500"
@@ -386,7 +396,7 @@ export default function ContactPage() {
                 }}
               >
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Let's Connect
+                  Let&apos;s Connect
                 </span>
                 <motion.div 
                   animate={{
@@ -410,8 +420,8 @@ export default function ContactPage() {
                   transform: "translateZ(20px)"
                 }}
               >
-                Have a project in mind or want to collaborate? I'd love to hear from you. 
-                Let's discuss how we can bring your ideas to life and create something amazing together.
+                Have a project in mind or want to collaborate? I&apos;d love to hear from you. 
+                Let&apos;s discuss how we can bring your ideas to life and create something amazing together.
               </motion.p>
             </div>
 
@@ -425,7 +435,7 @@ export default function ContactPage() {
                 onSubmit={handleSubmit}
                 className="space-y-8"
               >
-                {formFields.map((field, index) => (
+                {formFields.map((field) => (
                   <FormField
                     key={field.name}
                     field={field}
@@ -483,11 +493,11 @@ export default function ContactPage() {
               <Card3D>
                 <div className="bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm p-8 rounded-3xl border border-white/20 dark:border-gray-700/20 shadow-xl max-w-2xl mx-auto">
                   <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-                    Let's Build Something Amazing
+                    Let&apos;s Build Something Amazing
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Whether you need help with development, SEO optimization, or infrastructure, 
-                    I'm here to help turn your vision into reality. Every project is an opportunity 
+                    I&apos;m here to help turn your vision into reality. Every project is an opportunity 
                     to create something exceptional.
                   </p>
                 </div>

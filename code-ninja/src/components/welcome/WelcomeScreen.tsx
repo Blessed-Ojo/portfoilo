@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX, SkipForward } from "lucide-react";
 import LoadingScreen from "./LoadingScreen";
@@ -26,6 +26,61 @@ export default function EnhancedWelcomeScreen({ onComplete }: WelcomeScreenProps
   const fullText = "Transforming ideas into fast, beautiful digital experiences";
   const skills = ["React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Python", "MongoDB", "ReactNative", "Tailwind CSS", "SEO Optimization"];
 
+  const handleStart = useCallback(() => {
+    if (soundEnabled) {
+      try {
+        const audioContext = new (window.AudioContext || (window as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext || AudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.3);
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.3);
+      } catch {
+        console.warn('Audio context not supported');
+      }
+    }
+
+    setGlitch(true);
+    setTimeout(() => setGlitch(false), 200);
+    setSliced(true);
+
+    setTimeout(() => {
+      setStart(true);
+      setLoading(true);
+      
+      const loadingInterval = setInterval(() => {
+        setLoadingProgress(prev => {
+          if (prev >= 100) {
+            clearInterval(loadingInterval);
+            setTimeout(() => {
+              onComplete?.();
+            }, 500);
+            return 100;
+          }
+          return prev + Math.random() * 15 + 5;
+        });
+      }, 150);
+    }, 700);
+  }, [soundEnabled, onComplete]);
+
+  const handleSkip = useCallback(() => {
+    setStart(true);
+    setLoading(true);
+    setLoadingProgress(100);
+    setTimeout(() => {
+      onComplete?.();
+    }, 300);
+  }, [onComplete]);
+
   // Show skip button after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => setShowSkipButton(true), 2000);
@@ -45,70 +100,11 @@ export default function EnhancedWelcomeScreen({ onComplete }: WelcomeScreenProps
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  }, [handleStart, handleSkip]);
 
-  const handleStart = () => {
-    if (soundEnabled) {
-      try {
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-        oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.3);
-        
-        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-        
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + 0.3);
-      } catch (error) {
-        console.warn('Audio context not supported');
-      }
-    }
-
-    setGlitch(true);
-    setTimeout(() => setGlitch(false), 200);
-    setSliced(true);
-
-    setTimeout(() => {
-      setStart(true);
-      setLoading(true);
-      
-      const loadingInterval = setInterval(() => {
-        setLoadingProgress(prev => {
-          if (prev >= 100) {
-            clearInterval(loadingInterval);
-            setTimeout(() => {
-              if (onComplete) {
-                onComplete();
-              }
-            }, 500);
-            return 100;
-          }
-          return prev + Math.random() * 15 + 5;
-        });
-      }, 150);
-    }, 700);
-  };
-
-  const handleSkip = () => {
-    setStart(true);
-    setLoading(true);
-    setLoadingProgress(100);
-    setTimeout(() => {
-      if (onComplete) {
-        onComplete();
-      }
-    }, 300);
-  };
-
-  const handleTypewriterComplete = () => {
+  const handleTypewriterComplete = useCallback(() => {
     setTimeout(() => setShowSkills(true), 500);
-  };
+  }, []);
 
   // Loading screen
   if (start && loading) {
@@ -119,6 +115,7 @@ export default function EnhancedWelcomeScreen({ onComplete }: WelcomeScreenProps
       />
     );
   }
+
 
   return (
     <motion.div 

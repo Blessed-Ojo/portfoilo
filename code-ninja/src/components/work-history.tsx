@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   BriefcaseIcon,
@@ -93,7 +93,7 @@ const WorkHistory: React.FC = () => {
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              From foundational learning to mastering the art of code, here's my professional journey of growth and impact.
+              From foundational learning to mastering the art of code, here&apos;s my professional journey of growth and impact.
             </p>
           </motion.div>
 

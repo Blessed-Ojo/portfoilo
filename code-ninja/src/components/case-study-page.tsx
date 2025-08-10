@@ -12,22 +12,48 @@ import {
   ArrowDownIcon,
 } from "@heroicons/react/24/outline";
 
-// Animation Variants
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50, z: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100
-    },
-  },
-};
+// Type definitions
+interface BeforeAfterMetric {
+  metric: string;
+  before: string;
+  after: string;
+  improvement: string;
+}
 
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+}
+
+interface CaseStudyData {
+  hero: {
+    title: string;
+    client: string;
+    duration: string;
+    overview: string;
+    technologies: string[];
+    heroImage: string;
+  };
+  challenge: {
+    problem: string;
+    context: string;
+    constraints: string[];
+    metrics: string[];
+  };
+  goals: {
+    primary: string[];
+    stakeholder: string[];
+    success: string[];
+  };
+  results: {
+    beforeAfter: BeforeAfterMetric[];
+    metrics: string[];
+    testimonials?: Testimonial[];
+  };
+}
+
+// Animation Variants
 const float3D: Variants = {
   hidden: { 
     opacity: 0, 
@@ -211,7 +237,7 @@ function getImprovementColor(improvement: string) {
     : "text-gray-700 dark:text-gray-300";
 }
 
-export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
+export default function CaseStudyPage({ caseStudy }: { caseStudy: CaseStudyData }) {
   return (
     <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-white min-h-screen pt-24 relative overflow-hidden transition-colors duration-300">
       <AnimatedBackground />
@@ -282,7 +308,7 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {caseStudy.hero.technologies.map(
-                  (tech: string, i: number) => (
+                  (tech: string) => (
                     <motion.span
                       key={tech}
                       whileHover={{ scale: 1.05, y: -2 }}
@@ -365,14 +391,14 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                   </h3>
                   <ul className="space-y-3">
                     {caseStudy.challenge.constraints.map(
-                      (c: string, i: number) => (
+                      (constraint: string, index: number) => (
                         <motion.li
-                          key={i}
+                          key={index}
                           whileHover={{ x: 10, scale: 1.02 }}
                           className="flex items-start gap-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
                         >
                           <CheckIcon className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                          {c}
+                          {constraint}
                         </motion.li>
                       )
                     )}
@@ -388,14 +414,14 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                     Initial Metrics
                   </h3>
                   <ul className="space-y-3">
-                    {caseStudy.challenge.metrics.map((m: string, i: number) => (
+                    {caseStudy.challenge.metrics.map((metric: string, index: number) => (
                       <motion.li
-                        key={i}
+                        key={index}
                         whileHover={{ x: 10, scale: 1.02 }}
                         className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 flex items-center gap-3"
                       >
                         <span className="text-green-500 text-lg">▸</span>
-                        {m}
+                        {metric}
                       </motion.li>
                     ))}
                   </ul>
@@ -417,16 +443,16 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
         >
           <SectionTitle>Project Goals</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {["primary", "stakeholder", "success"].map((key, index) => {
+            {["primary", "stakeholder", "success"].map((key, goalIndex) => {
               const colors = ['blue', 'purple', 'pink'];
-              const color = colors[index];
+              const color = colors[goalIndex];
               return (
-                <Card3D key={key} delay={index * 0.2}>
+                <Card3D key={key} delay={goalIndex * 0.2}>
                   <div className="p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-lg transition-all duration-500 h-full">
                     <h3 className={`text-xl font-medium text-${color}-600 dark:text-${color}-400 mb-6 flex items-center gap-3`}>
                       <motion.span 
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: index * 0.5 }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: goalIndex * 0.5 }}
                         className={`w-3 h-3 bg-${color}-500 rounded-full`}
                       />
                       {key === "primary"
@@ -436,9 +462,9 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                         : "Success Criteria"}
                     </h3>
                     <ul className="space-y-4">
-                      {caseStudy.goals[key].map((item: string, i: number) => (
+                      {caseStudy.goals[key as keyof typeof caseStudy.goals].map((item: string, itemIndex: number) => (
                         <motion.li
-                          key={i}
+                          key={itemIndex}
                           whileHover={{ x: 10, scale: 1.02 }}
                           className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
                         >
@@ -470,11 +496,11 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
               Before vs After
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {caseStudy.results.beforeAfter.map((m: any, i: number) => (
-                <Card3D key={i} delay={i * 0.1}>
+              {caseStudy.results.beforeAfter.map((metric: BeforeAfterMetric, metricIndex: number) => (
+                <Card3D key={metricIndex} delay={metricIndex * 0.1}>
                   <div className="group relative overflow-hidden p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
                     <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">
-                      {m.metric}
+                      {metric.metric}
                     </h4>
                     <div className="space-y-4 mb-6">
                       <div className="flex items-center justify-between">
@@ -482,7 +508,7 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                           Before:
                         </span>
                         <span className="text-lg font-mono text-gray-700 dark:text-gray-300">
-                          {m.before}
+                          {metric.before}
                         </span>
                       </div>
                       <div className="flex items-center justify-between">
@@ -490,19 +516,19 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                           After:
                         </span>
                         <span className="text-lg font-mono text-blue-600 dark:text-blue-400 font-semibold">
-                          {m.after}
+                          {metric.after}
                         </span>
                       </div>
                     </div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 backdrop-blur-sm ${getImprovementColor(
-                        m.improvement
+                        metric.improvement
                       )}`}
                     >
-                      {getImprovementIcon(m.improvement)}
+                      {getImprovementIcon(metric.improvement)}
                       <span className="text-sm font-semibold tracking-wide">
-                        {m.improvement}
+                        {metric.improvement}
                       </span>
                     </motion.div>
                   </div>
@@ -516,8 +542,8 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
               Additional Impact
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {caseStudy.results.metrics.map((m: string, i: number) => (
-                <Card3D key={i} delay={i * 0.1}>
+              {caseStudy.results.metrics.map((metric: string, impactIndex: number) => (
+                <Card3D key={impactIndex} delay={impactIndex * 0.1}>
                   <div className="flex items-center gap-4 p-6 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-xl hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <motion.div
                       whileHover={{ rotateY: 360 }}
@@ -527,7 +553,7 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                       <TrophyIcon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                     </motion.div>
                     <span className="text-sm text-gray-700 dark:text-gray-300">
-                      {m}
+                      {metric}
                     </span>
                   </div>
                 </Card3D>
@@ -543,13 +569,13 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                   Client Testimonials
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {caseStudy.results.testimonials.map((t: any, i: number) => (
-                    <Card3D key={i} delay={i * 0.2}>
+                  {caseStudy.results.testimonials.map((testimonial: Testimonial, testimonialIndex: number) => (
+                    <Card3D key={testimonialIndex} delay={testimonialIndex * 0.2}>
                       <div className="p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-3xl border border-white/30 dark:border-gray-700/30 shadow-2xl hover:shadow-lg transition-all duration-500">
                         <div className="flex items-center gap-1 mb-4">
-                          {[...Array(5)].map((_, j) => (
+                          {[...Array(5)].map((_, starIndex) => (
                             <motion.div
-                              key={j}
+                              key={starIndex}
                               whileHover={{ scale: 1.2, rotate: 180 }}
                               transition={{ duration: 0.3 }}
                             >
@@ -558,14 +584,14 @@ export default function CaseStudyPage({ caseStudy }: { caseStudy: any }) {
                           ))}
                         </div>
                         <p className="text-gray-700 dark:text-gray-300 mb-6 italic text-lg leading-relaxed">
-                          &quot;{t.quote}&quot;
+                          &quot;{testimonial.quote}&quot;
                         </p>
                         <div>
                           <p className="font-medium text-gray-800 dark:text-white">
-                            {t.name}
+                            {testimonial.name}
                           </p>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
-                            {t.role}
+                            {testimonial.role}
                           </p>
                         </div>
                       </div>

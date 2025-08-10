@@ -1,6 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 import axios from 'axios'
 
+// Define types for better type safety
+interface SpotifyTokenResponse {
+  access_token: string
+  refresh_token: string
+  expires_in: number
+  token_type: string
+  scope: string
+}
+
+interface SpotifyErrorResponse {
+  error: string
+  error_description?: string
+}
+
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get('code')
   const state = req.nextUrl.searchParams.get('state')
@@ -44,7 +58,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const response = await axios.post(
+    const response = await axios.post<SpotifyTokenResponse>(
       'https://accounts.spotify.com/api/token',
       new URLSearchParams({
         grant_type: 'authorization_code',
@@ -61,28 +75,30 @@ export async function GET(req: NextRequest) {
       }
     )
 
-    const { access_token, refresh_token, expires_in } = response.data
-
-    // Store tokens securely (e.g., in database, secure cookie, etc.)
-    // Instead of returning tokens directly, you might want to:
-    // 1. Store in database linked to user session
-    // 2. Set secure HTTP-only cookies
-    // 3. Return success status and redirect
+    const { expires_in } = response.data
+    
+    // Note: access_token and refresh_token are available in response.data
+    // but are not used directly in this implementation for security reasons
+    // They should be stored securely (database, secure cookies, etc.)
+    
+    // TODO: Implement secure token storage
+    // Example implementations:
+    // 1. Store in database: await storeTokensInDatabase(userId, response.data)
+    // 2. Set secure cookies: setSecureCookies(response.data)
+    // 3. Store in session: await storeInSession(sessionId, response.data)
 
     // For now, returning success without exposing tokens
     return NextResponse.json({
       message: 'Spotify authentication successful!',
       expires_in,
-      // Don't expose actual tokens in response
-      // access_token: access_token, // Remove this
-      // refresh_token: refresh_token, // Remove this
+      // Tokens are intentionally not returned for security
     })
 
-  } catch (error: any) {
-    // Better error handling
+  } catch (error: unknown) {
+    // Better error handling with proper typing
     if (axios.isAxiosError(error)) {
       const statusCode = error.response?.status || 500
-      const errorData = error.response?.data || {}
+      const errorData = error.response?.data as SpotifyErrorResponse | undefined
       
       console.error('Spotify API error:', {
         status: statusCode,
@@ -97,7 +113,13 @@ export async function GET(req: NextRequest) {
       )
     }
 
-    console.error('Unexpected error during Spotify auth:', error)
+    // Handle non-Axios errors
+    if (error instanceof Error) {
+      console.error('Unexpected error during Spotify auth:', error.message)
+    } else {
+      console.error('Unknown error during Spotify auth:', error)
+    }
+
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

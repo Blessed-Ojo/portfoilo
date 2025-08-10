@@ -12,6 +12,12 @@ export interface SchemaType {
   type: string;
 }
 
+interface PreviewSelection {
+  title?: string;
+  subtitle?: string;
+  media?: unknown;
+}
+
 /**
  * Interface for document schema types
  */
@@ -20,11 +26,7 @@ export interface DocumentSchema extends SchemaType {
   fields: SchemaField[];
   preview?: {
     select: Record<string, string>;
-    prepare?: (selection: Record<string, any>) => {
-      title?: string;
-      subtitle?: string;
-      media?: any;
-    };
+    prepare?: (selection: Record<string, unknown>) => PreviewSelection;
   };
 }
 
@@ -37,7 +39,7 @@ export interface SchemaField {
   type: string;
   description?: string;
   validation?: (rule: Rule) => Rule;
-  options?: Record<string, any>;
+  options?: Record<string, unknown>;
   fields?: SchemaField[];
   of?: Array<{ type: string } & Partial<SchemaField>>;
   rows?: number;

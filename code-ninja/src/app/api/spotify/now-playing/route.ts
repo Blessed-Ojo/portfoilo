@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import {  NextResponse } from "next/server";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID!;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET!;
@@ -80,7 +80,7 @@ async function fetchWithTimeout(url: string, options: RequestInit, timeout: numb
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     if (!client_id || !client_secret || !refresh_token) {
       return NextResponse.json(

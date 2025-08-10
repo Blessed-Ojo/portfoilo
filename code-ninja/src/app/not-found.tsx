@@ -42,8 +42,9 @@ export default function NotFound() {
             The page you&apos;re looking for has vanished into the digital shadows. 
             Even the best ninjas sometimes take a wrong turn.
           </p>
+          {/* TODO: Check your URL or return to base camp */}
           <p className="text-sm text-gray-600 dark:text-slate-400 font-mono">
-            // TODO: Check your URL or return to base camp
+            Check your URL or return to base camp
           </p>
         </div>
 

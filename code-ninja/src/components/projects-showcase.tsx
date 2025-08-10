@@ -4,7 +4,6 @@ import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import projectsDataJson from "@/data/all-projects.json"; // Adjust the path as necessary
 
 // --- Types ---
@@ -23,19 +22,37 @@ interface Project {
   metrics?: Record<string, string>;
 }
 
+interface RawProject {
+  id: string;
+  type: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  techStack: string[];
+  links: {
+    live?: string;
+    github?: string;
+    caseStudy?: string;
+  };
+  metrics?: Record<string, unknown>;
+}
+
 // Clean metrics and cast type for type safety
-const projects: Project[] = projectsDataJson.projects.map((p: any) => ({
-  ...p,
-  type: p.type as "case-study" | "standard",
-  metrics: p.metrics
+const projects: Project[] = projectsDataJson.projects.map((p: RawProject) => {
+  const filteredMetrics = p.metrics
     ? Object.fromEntries(
         Object.entries(p.metrics).filter(
           ([, value]) => typeof value === "string"
         )
       )
-    : undefined,
-}));
+    : undefined;
 
+  return {
+    ...p,
+    type: p.type as "case-study" | "standard",
+    metrics: filteredMetrics as Record<string, string> | undefined,
+  };
+});
 const categories = ["All", "Full Stack", "SEO", "Web Design"];
 
 const gridVariants = {
@@ -57,6 +74,8 @@ const gridVariants = {
     },
   },
 };
+
+// ... rest of the file remains exactly the same ...
 
 const ProjectsShowcase: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("All");

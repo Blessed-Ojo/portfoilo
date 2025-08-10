@@ -19,22 +19,7 @@ interface SanityPost {
   categories?: (Category | null)[];
 }
 
-// Animation Variants
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50, z: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100
-    },
-  },
-};
-
+// Animation Variants - removed unused fadeInUp
 const float3D: Variants = {
   hidden: { 
     opacity: 0, 
@@ -459,7 +444,7 @@ export default function BlogList({ posts }: { posts: SanityPost[] }) {
             >
               <div className="inline-block bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 rounded-2xl px-8 py-4 shadow-lg">
                 <span className="text-gray-700 dark:text-gray-300 text-lg">
-                  <span className="text-blue-500">$</span> echo "Happy coding!"
+                  <span className="text-blue-500">$</span> echo &ldquo;Happy coding!&rdquo;
                   <motion.span
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ duration: 1, repeat: Infinity }}

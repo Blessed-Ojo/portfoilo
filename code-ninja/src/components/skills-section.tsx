@@ -7,6 +7,7 @@ import {
   PresentationChartLineIcon,
   PaintBrushIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 interface Skill {
   name: string;
@@ -125,12 +126,12 @@ const skillsData: {
       },
       {
         name: "Ahrefs",
-        icon: "https://cdn.brandfetch.io/idxB1p5kuP/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-original.svg",
         category: "Tools",
       },
       {
         name: "SEMrush",
-        icon: "https://cdn.brandfetch.io/idt3n8W3ef/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://www.vectorlogo.zone/logos/semrush/semrush-icon.svg",
         category: "Tools",
       },
       {
@@ -160,32 +161,32 @@ const skillsData: {
     skills: [
       {
         name: "Figma",
-        icon: "https://cdn.brandfetch.io/idZHcZ_i7F/w/320/h/320/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
         category: "Design Tools",
       },
       {
         name: "Webflow",
-        icon: "https://cdn.brandfetch.io/id4knLKYsV/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://www.vectorlogo.zone/logos/webflow/webflow-icon.svg",
         category: "Design Tools",
       },
       {
         name: "Framer",
-        icon: "https://cdn.brandfetch.io/idCeIE9B96/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://www.vectorlogo.zone/logos/framer/framer-icon.svg",
         category: "Design Tools",
       },
       {
         name: "WordPress",
-        icon: "https://cdn.brandfetch.io/idbnlnCBDY/w/200/h/200/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg",
         category: "Design Tools",
       },
       {
         name: "Wix",
-        icon: "https://cdn.brandfetch.io/id93wC1WMj/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://www.vectorlogo.zone/logos/wix/wix-icon.svg",
         category: "Design Tools",
       },
       {
         name: "Bubble",
-        icon: "https://cdn.brandfetch.io/id6z4_raly/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+        icon: "https://cdn-icons-png.flaticon.com/512/3159/3159310.png",
         category: "Design Tools",
       },
     ],
@@ -209,8 +210,8 @@ const categoryVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { 
-      duration: 0.6, 
+    transition: {
+      duration: 0.6,
       ease: [0.25, 0.46, 0.45, 0.94] as const,
       type: "spring" as const,
       stiffness: 100,
@@ -225,8 +226,8 @@ const skillVariants = {
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    transition: { 
-      duration: 0.4, 
+    transition: {
+      duration: 0.4,
       ease: "easeOut" as const,
       type: "spring" as const,
       stiffness: 300,
@@ -237,8 +238,8 @@ const skillVariants = {
     scale: 1.1,
     y: -8,
     rotateY: 5,
-    transition: { 
-      duration: 0.2, 
+    transition: {
+      duration: 0.2,
       ease: "easeOut" as const,
       type: "spring" as const,
       stiffness: 400,
@@ -300,6 +301,8 @@ const NinjaSlash = () => (
 );
 
 const SkillsSection: React.FC = () => {
+  
+
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-black relative overflow-hidden">
       {/* Ninja-themed background elements */}
@@ -308,7 +311,7 @@ const SkillsSection: React.FC = () => {
         <div className="absolute bottom-20 right-20 w-24 h-24 border border-blue-400/20 rotate-12 rounded-lg"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-300/20 -rotate-12 rounded-lg"></div>
       </div>
-      
+
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="w-full h-full" style={{
@@ -335,10 +338,10 @@ const SkillsSection: React.FC = () => {
                 ⚔️ Ninja Arsenal
               </span>
             </motion.div>
-            
+
             <motion.h2
               className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 dark:from-white dark:via-blue-100 dark:to-blue-200 bg-clip-text text-transparent"
-              whileInView={{ 
+              whileInView={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -348,17 +351,17 @@ const SkillsSection: React.FC = () => {
             >
               Technical Mastery
             </motion.h2>
-            
+
             <motion.p
               className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0.7 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Wielding cutting-edge technologies with the precision of a digital ninja. 
+              Wielding cutting-edge technologies with the precision of a digital ninja.
               Each skill sharpened through countless battles in the code dojo.
             </motion.p>
-            
+
             <NinjaSlash />
           </motion.div>
 
@@ -378,8 +381,8 @@ const SkillsSection: React.FC = () => {
                     <div className="flex items-center justify-center gap-4 mb-12">
                       <motion.div
                         className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-500/20 dark:to-blue-600/20 border border-blue-300 dark:border-blue-400/30 backdrop-blur-sm"
-                        whileHover={{ 
-                          scale: 1.1, 
+                        whileHover={{
+                          scale: 1.1,
                           rotate: [0, -5, 5, 0],
                           boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)"
                         }}
@@ -387,7 +390,7 @@ const SkillsSection: React.FC = () => {
                       >
                         <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                       </motion.div>
-                      <motion.h3 
+                      <motion.h3
                         className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
@@ -419,24 +422,25 @@ const SkillsSection: React.FC = () => {
                           <div className="relative p-4 rounded-xl bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/50 dark:to-gray-900/50 border border-gray-200 dark:border-gray-700/50 backdrop-blur-sm transition-all duration-300 group-hover:border-blue-400/50 group-hover:shadow-lg group-hover:shadow-blue-500/20">
                             {/* Ninja glow effect */}
                             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-100/20 dark:from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
+
                             <div className="relative z-10 flex flex-col items-center gap-3">
                               {/* Skill Icon */}
                               <motion.div
                                 className="relative w-10 h-10 flex items-center justify-center"
-                                whileHover={{ 
+                                whileHover={{
                                   rotate: [0, -10, 10, 0],
                                   scale: [1, 1.1, 1]
                                 }}
                                 transition={{ duration: 0.4 }}
                               >
-                                <img
+                                <Image
                                   src={skill.icon}
                                   alt={skill.name}
                                   width={32}
                                   height={32}
                                   className="w-8 h-8 object-contain filter group-hover:brightness-125 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] transition-all duration-300"
                                   loading="lazy"
+                                  unoptimized
                                   onError={(e) => {
                                     const target = e.target as HTMLImageElement;
                                     target.style.display = "none";
@@ -446,11 +450,11 @@ const SkillsSection: React.FC = () => {
                                     }
                                   }}
                                 />
-                                
+
                                 {/* Subtle pulse effect */}
                                 <div className="absolute inset-0 rounded-full bg-blue-400/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
                               </motion.div>
-                              
+
                               {/* Skill Name */}
                               <span className="text-xs font-semibold text-gray-600 dark:text-gray-300 text-center leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300 break-words">
                                 {skill.name}

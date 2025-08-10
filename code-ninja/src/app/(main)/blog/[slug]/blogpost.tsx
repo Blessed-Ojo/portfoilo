@@ -19,31 +19,26 @@ interface Category {
   description?: string;
 }
 
+// Fixed: Replace 'any' with proper typing for Sanity's PortableText blocks
 interface SanityPost {
   title: string;
-  body: any[];
+  body: Array<{
+    _type: string;
+    children?: Array<{
+      _type: string;
+      text: string;
+      marks?: string[];
+    }>;
+    style?: string;
+    [key: string]: unknown;
+  }>;
   _createdAt: string;
   publishedAt?: string;
   mainImage?: SanityImage;
   categories?: (Category | null)[];
 }
 
-// Animation Variants
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50, z: -100 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100
-    },
-  },
-};
-
+// Animation Variants - removed unused fadeInUp
 const float3D: Variants = {
   hidden: { 
     opacity: 0, 
@@ -363,12 +358,13 @@ const components: PortableTextComponents = {
         {children}
       </motion.li>
     ),
-    number: ({ children, index }) => (
+    // Fixed: Removed unused 'index' parameter
+    number: ({ children }) => (
       <motion.li 
         whileHover={{ x: 10, scale: 1.02 }}
         className="flex items-center gap-3 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
       >
-        <span className="text-blue-500 font-bold min-w-[24px]">{(index || 0) + 1}.</span> 
+        <span className="text-blue-500 font-bold min-w-[24px]">•</span> 
         {children}
       </motion.li>
     ),
@@ -427,7 +423,7 @@ export default function BlogPost({ post }: { post: SanityPost }) {
                     (cat): cat is Category =>
                       !!cat && !!cat.slug && !!cat.slug.current
                   )
-                  .map((cat, index) => (
+                  .map((cat) => (
                     <motion.div
                       key={cat._id}
                       whileHover={{ scale: 1.1, y: -2 }}
